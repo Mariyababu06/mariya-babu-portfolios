@@ -1,14 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mariya-babu-portfolio</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Mariya Babu - Portfolio | AI & Data Science Expert</title>
+    <meta name="description" content="Data Scientist & Machine Learning Engineer Portfolio" />
+    <meta name="author" content="Mariya Babu" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="mariya-babu-portfolio" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="Mariya Babu - Portfolio" />
+    <meta property="og:description" content="Data Scientist & Machine Learning Engineer" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -17,8 +23,282 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
 
-  <body>
-    <div id="root"></div>
+  <body data-theme="dark">
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <div class="toggle-wrap">
+            <i class="ri-moon-clear-fill"></i>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="container">
+            <a href="#" class="logo">M<span class="gradient-text">•</span>B</a>
+            <div class="nav-links">
+                <a href="#About" class="nav-link"><span>01.</span> About</a>
+                <a href="#Expertise" class="nav-link"><span>02.</span> Expertise</a>
+                <a href="#Work" class="nav-link"><span>03.</span> Work</a>
+                <a href="#Contact" class="nav-link"><span>04.</span> Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">Transforming Data into Intelligence</p>
+                    <h1 class="hero-title animate__animated animate__fadeInUp animate__delay-1s">
+                        <span class="gradient-text">Mariya Babu</span><br>
+                        Data Science & AI Solutions
+                    </h1>
+                    <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s">
+                        Passionate Data Scientist & Machine Learning Engineer with expertise in Python, 
+                        building intelligent systems that drive business growth and innovation.
+                    </p>
+                    <div class="hero-cta animate__animated animate__fadeInUp animate__delay-3s">
+                        <a href="#Work" class="btn magnetic">
+                            <span>Explore Work</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <a href="#Contact" class="btn btn-outline magnetic">
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image animate__animated animate__fadeInRight animate__delay-2s">
+                    <div class="image-wrapper">
+                        <img src="/lovable-uploads/38c13c04-c458-4060-992c-9279161cbe7a.png" alt="Mariya Babu - Data Scientist" />
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="About" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span>01.</span> Professional Journey</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 class="gradient-text">Driven by Data, Powered by Innovation</h3>
+                    <p>
+                        As a passionate Data Scientist and Machine Learning Engineer, I specialize in transforming 
+                        complex data into actionable insights. My expertise spans across Python, machine learning 
+                        algorithms, and statistical analysis, with a proven track record of boosting model accuracy 
+                        by 30% in previous roles.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h4>3+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>30%</h4>
+                            <p>Avg. Performance Boost</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-preview">
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Machine Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Data Analysis</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Leadership</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="Expertise" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span>02.</span> Technical Mastery</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="service-card magnetic">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p>Building intelligent systems with advanced ML algorithms, neural networks, and deep learning frameworks.</p>
+                    <ul class="tech-list">
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Scikit-learn</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card magnetic">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Extracting meaningful insights from complex datasets using statistical analysis and visualization.</p>
+                    <ul class="tech-list">
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>Matplotlib</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card magnetic">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Engineering</h3>
+                    <p>Designing robust data pipelines and architectures for scalable data processing and storage.</p>
+                    <ul class="tech-list">
+                        <li>SQL</li>
+                        <li>Apache Spark</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="Work" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span>03.</span> Featured Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card magnetic">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Recommendation System</h3>
+                        <p>Built an AI-powered recommendation engine that increased user engagement by 40% using collaborative filtering and deep learning.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card magnetic">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Process Automation</h3>
+                        <p>Automated reporting processes saving 10+ hours per week through intelligent data processing and visualization.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Automation</span>
+                            <span>Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span>04.</span> Let's Connect</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3 class="gradient-text">Ready to Make an Impact?</h3>
+                    <p>I'm excited to bring my skills and enthusiasm to your team. Let's build something amazing together!</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mariyababuit@mail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <a href="mailto:mariyababuit@mail.com" class="btn magnetic">
+                        <span>Get In Touch</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mariya-babu-854331257/" class="social-link magnetic" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Mariyababu06" class="social-link magnetic" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:mariyababuit@mail.com" class="social-link magnetic">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
