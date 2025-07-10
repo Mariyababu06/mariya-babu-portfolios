@@ -136,9 +136,93 @@ nav ul li a:hover {
 }
 
 .header-text {
-    margin-top: 15%;
+    margin-top: 10%;
     font-size: 30px;
     text-align: left;
+}
+
+.data-quotes {
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
+
+.quote-text {
+    font-size: 18px;
+    font-style: italic;
+    margin: 15px 0;
+    padding: 15px 20px;
+    position: relative;
+    background: rgba(127, 90, 240, 0.1);
+    border-left: 4px solid;
+    border-image: linear-gradient(135deg, #7f5af0, #2cb67d, #ff6b6b) 1;
+    border-radius: 0 10px 10px 0;
+    backdrop-filter: blur(10px);
+    color: #e0e0e0;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    transform: translateX(-20px);
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.quote-text:nth-child(1) {
+    animation-delay: 0.7s;
+}
+
+.quote-text:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.quote-text::before {
+    content: '"';
+    font-size: 40px;
+    color: #7f5af0;
+    position: absolute;
+    left: -5px;
+    top: -10px;
+    font-family: 'Times New Roman', serif;
+    opacity: 0.7;
+}
+
+.quote-text::after {
+    content: '"';
+    font-size: 40px;
+    color: #2cb67d;
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    font-family: 'Times New Roman', serif;
+    opacity: 0.7;
+}
+
+.quote-text:hover {
+    transform: translateX(0);
+    background: rgba(127, 90, 240, 0.2);
+    box-shadow: 0 5px 20px rgba(127, 90, 240, 0.3);
+    border-left-width: 6px;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-text h1 {
