@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -156,7 +155,50 @@ nav ul li a:hover {
     to { filter: drop-shadow(0 0 20px rgba(44, 182, 125, 0.5)); }
 }
 
-.header-text h1 span {
+.header-text h1 .unique-name {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: uniqueNameGlow 4s ease-in-out infinite, gradientShift 6s ease infinite;
+    font-weight: 700;
+    text-shadow: 0 0 30px rgba(255, 107, 107, 0.6);
+    position: relative;
+}
+
+.header-text h1 .unique-name::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(78, 205, 196, 0.3), rgba(69, 183, 209, 0.3));
+    border-radius: 10px;
+    filter: blur(20px);
+    z-index: -1;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes uniqueNameGlow {
+    0% { 
+        filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.8)) 
+                drop-shadow(0 0 20px rgba(78, 205, 196, 0.6))
+                drop-shadow(0 0 30px rgba(69, 183, 209, 0.4));
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px rgba(78, 205, 196, 0.8)) 
+                drop-shadow(0 0 30px rgba(69, 183, 209, 0.6))
+                drop-shadow(0 0 40px rgba(255, 234, 167, 0.4));
+    }
+    100% { 
+        filter: drop-shadow(0 0 15px rgba(69, 183, 209, 0.8)) 
+                drop-shadow(0 0 25px rgba(150, 206, 180, 0.6))
+                drop-shadow(0 0 35px rgba(255, 107, 107, 0.4));
+    }
+}
+
+.header-text h1 span:not(.unique-name) {
     color: #ff004f;
     background: linear-gradient(135deg, #ff004f, #ff6b6b);
     -webkit-background-clip: text;
