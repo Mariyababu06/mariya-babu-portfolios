@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,37 +127,37 @@
                     <i class="fas fa-robot"></i>
                     <h2>Machine Learning Model Development</h2>
                     <p>Designing and training supervised, unsupervised, and reinforcement learning models. Developing algorithms for classification, regression, clustering, and recommendation systems with advanced feature engineering and model optimization.</p>
-                    <a href="#">Learn more →</a>
+                    <a href="#Contact" class="service-link">Learn more →</a>
                 </div>
                 <div>
                     <i class="fas fa-chart-line"></i>
                     <h2>Advanced Data Analytics</h2>
                     <p>Analyzing structured and unstructured data to identify trends, patterns, and anomalies. Performing exploratory data analysis (EDA), statistical modeling, and delivering actionable insights to inform strategic business decisions.</p>
-                    <a href="#">Learn more →</a>
+                    <a href="#Contact" class="service-link">Learn more →</a>
                 </div>
                 <div>
                     <i class="fas fa-brain"></i>
                     <h2>Deep Learning & Neural Networks</h2>
                     <p>Building sophisticated neural network architectures including CNNs for computer vision, RNNs for sequence data, and transformers for NLP tasks. Specializing in transfer learning and model fine-tuning for optimal performance.</p>
-                    <a href="#">Learn more →</a>
+                    <a href="#Contact" class="service-link">Learn more →</a>
                 </div>
                 <div>
                     <i class="fas fa-language"></i>
                     <h2>Natural Language Processing (NLP)</h2>
                     <p>Developing advanced NLP solutions including sentiment analysis, text classification, named entity recognition, and language translation. Creating chatbots, virtual assistants, and automated content analysis systems.</p>
-                    <a href="#">Learn more →</a>
+                    <a href="#Contact" class="service-link">Learn more →</a>
                 </div>
                 <div>
                     <i class="fas fa-eye"></i>
                     <h2>Computer Vision Solutions</h2>
                     <p>Implementing image recognition, object detection, facial recognition, and medical image analysis systems. Developing real-time video processing and augmented reality applications using state-of-the-art CV techniques.</p>
-                    <a href="#">Learn more →</a>
+                    <a href="#Contact" class="service-link">Learn more →</a>
                 </div>
                 <div>
                     <i class="fas fa-cogs"></i>
                     <h2>AI-Powered Automation</h2>
                     <p>Automating complex business processes with AI and machine learning. Creating intelligent recommendation engines, fraud detection systems, predictive maintenance solutions, and automated decision-making frameworks.</p>
-                    <a href="#">Learn more →</a>
+                    <a href="#Contact" class="service-link">Learn more →</a>
                 </div>
             </div>
         </div>
@@ -263,6 +264,24 @@
             document.getElementById(tabname).classList.add("active-tab");
             event.currentTarget.classList.add("active-link");
         }
+
+        // Smooth scroll for service links
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceLinks = document.querySelectorAll('.service-link');
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
