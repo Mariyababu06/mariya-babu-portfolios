@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -1198,4 +1197,117 @@ form button:hover {
         font-size: 14px;
         padding: 12px 18px;
     }
+}
+
+/* Enhanced About Section Animations */
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
+.animate-tilt {
+  animation: tilt 10s infinite linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Enhanced tab transitions */
+.tab-content-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.tab-content-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effects for cards */
+.card-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(127, 90, 240, 0.3);
+}
+
+/* Progress bar animations */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+.progress-animate {
+  animation: progressFill 2s ease-out forwards;
+}
+
+/* Floating animation for background elements */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.float-slow {
+  animation: floatSlow 20s ease-in-out infinite;
+}
+
+/* Enhanced button hover effects */
+.btn-magnetic {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-magnetic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(127, 90, 240, 0.4);
+}
+
+/* Tab button active state */
+.tab-active {
+  background: linear-gradient(135deg, #7f5af0, #ff6b9d);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(127, 90, 240, 0.4);
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .animate-tilt {
+    animation: none;
+  }
+  
+  .glass {
+    backdrop-filter: blur(10px);
+  }
 }
