@@ -15,6 +15,86 @@ body {
     overflow-x: hidden;
 }
 
+/* 3D Animation Keyframes */
+@keyframes rotate3d {
+    0% {
+        transform: rotateX(var(--start-x, 0deg)) rotateY(var(--start-y, 0deg)) rotateZ(0deg);
+    }
+    25% {
+        transform: rotateX(var(--start-x, 0deg)) rotateY(var(--start-y, 90deg)) rotateZ(90deg);
+    }
+    50% {
+        transform: rotateX(var(--start-x, 180deg)) rotateY(var(--start-y, 180deg)) rotateZ(180deg);
+    }
+    75% {
+        transform: rotateX(var(--start-x, 270deg)) rotateY(var(--start-y, 270deg)) rotateZ(270deg);
+    }
+    100% {
+        transform: rotateX(var(--start-x, 360deg)) rotateY(var(--start-y, 360deg)) rotateZ(360deg);
+    }
+}
+
+@keyframes orbit3d {
+    0% {
+        transform: translate(-50%, -50%) rotateX(var(--orbit-x, 0deg)) rotateY(0deg) translateZ(100px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateX(var(--orbit-x, 0deg)) rotateY(360deg) translateZ(100px);
+    }
+}
+
+@keyframes pulse3d {
+    0%, 100% {
+        transform: translateZ(50px) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateZ(80px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes float3d {
+    0%, 100% {
+        transform: perspective(1000px) translateY(0px) rotateX(0deg) rotateY(0deg);
+    }
+    33% {
+        transform: perspective(1000px) translateY(-20px) rotateX(5deg) rotateY(3deg);
+    }
+    66% {
+        transform: perspective(1000px) translateY(10px) rotateX(-3deg) rotateY(-5deg);
+    }
+}
+
+@keyframes animate-3d-enter {
+    0% {
+        opacity: 0;
+        transform: perspective(1000px) translateZ(-100px) rotateX(20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1000px) translateZ(0px) rotateX(0deg);
+    }
+}
+
+/* 3D Transform utilities */
+.transform-3d {
+    transform-style: preserve-3d;
+}
+
+.perspective {
+    perspective: 1000px;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+/* Enhanced existing animations with 3D effects */
+.animate-3d-enter {
+    animation: animate-3d-enter 0.8s ease-out forwards;
+}
+
 /* Advanced Animated Background */
 .animated-bg {
     position: fixed;

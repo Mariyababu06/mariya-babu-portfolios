@@ -1,8 +1,8 @@
-
 import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
+import ContactSection from '../components/ContactSection';
 
 const Index = () => {
   useEffect(() => {
@@ -38,7 +38,7 @@ const Index = () => {
       });
     });
 
-    // Magnetic effect for buttons
+    // Enhanced magnetic effect for buttons with 3D transforms
     const magneticElements = document.querySelectorAll('.magnetic');
     magneticElements.forEach(element => {
       element.addEventListener('mousemove', (e: Event) => {
@@ -47,11 +47,17 @@ const Index = () => {
         const x = mouseEvent.clientX - rect.left - rect.width / 2;
         const y = mouseEvent.clientY - rect.top - rect.height / 2;
         
-        (element as HTMLElement).style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        (element as HTMLElement).style.transform = `
+          perspective(1000px) 
+          translate(${x * 0.1}px, ${y * 0.1}px) 
+          rotateX(${y * 0.05}deg) 
+          rotateY(${x * 0.05}deg)
+          translateZ(10px)
+        `;
       });
       
       element.addEventListener('mouseleave', () => {
-        (element as HTMLElement).style.transform = 'translate(0px, 0px)';
+        (element as HTMLElement).style.transform = 'perspective(1000px) translate(0px, 0px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
       });
     });
 
@@ -71,7 +77,7 @@ const Index = () => {
       });
     };
 
-    // Intersection Observer for animations
+    // Enhanced Intersection Observer for 3D animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -80,7 +86,7 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fadeIn');
+          entry.target.classList.add('animate-fadeIn', 'animate-3d-enter');
           
           // Animate skill bars when about section is visible
           if (entry.target.id === 'About') {
@@ -111,13 +117,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white">
-      {/* Particles Background */}
-      <div id="particles-js" className="fixed inset-0 -z-10"></div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white relative overflow-hidden">
+      {/* Enhanced Particles Background with 3D effect */}
+      <div id="particles-js" className="fixed inset-0 -z-10" style={{ transform: 'translateZ(-100px)' }}></div>
+      
+      {/* 3D Background Elements */}
+      <div className="fixed inset-0 -z-20 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ transform: 'translateZ(-50px)' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', transform: 'translateZ(-30px)' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s', transform: 'translate(-50%, -50%) translateZ(-20px)' }}></div>
+      </div>
       
       <Navigation />
       <HeroSection />
       <AboutSection />
+      <ContactSection />
     </div>
   );
 };
