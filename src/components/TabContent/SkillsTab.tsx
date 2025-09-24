@@ -9,7 +9,7 @@ const SkillsTab = () => {
           { name: 'Data Science', level: 92, color: 'from-green-500 to-green-700', icon: '📊' },
           { name: 'Python & R', level: 88, color: 'from-yellow-500 to-orange-500', icon: '🐍' },
           { name: 'Big Data Analytics', level: 85, color: 'from-red-500 to-red-700', icon: '💾' },
-          { name: 'AI Solutions', level: 93, color: 'from-pink-500 to-pink-700', icon: '⚡' }
+          { name: 'ML Engineering', level: 93, color: 'from-pink-500 to-pink-700', icon: '⚡' }
         ].map((skill, index) => (
           <div key={index} className="group relative overflow-hidden bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl">
             <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-10 group-hover:opacity-20 transition-all duration-500`}></div>

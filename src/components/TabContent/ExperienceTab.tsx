@@ -8,7 +8,7 @@ const ExperienceTab = () => {
             title: 'Machine Learning Intern',
             company: 'Shamgar Software Solution',
             period: '2025 - Current',
-            description: 'Working on advanced ML algorithms and AI solutions for enterprise clients.'
+            description: 'Working on advanced ML algorithms and machine learning solutions for enterprise clients.'
           },
           {
             title: 'Data Science Intern',
