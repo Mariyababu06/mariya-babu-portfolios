@@ -34,10 +34,10 @@ const ContactSection = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
                       <i className="fas fa-envelope text-white text-xl"></i>
                     </div>
-                     <div>
-                       <p className="text-gray-400 text-sm">Email</p>
-                       <p className="text-white font-semibold">mariyababuit@gmail.com</p>
-                     </div>
+                    <div>
+                      <p className="text-gray-400 text-sm">Email</p>
+                      <p className="text-white font-semibold">mariyababuit@mail.com</p>
+                    </div>
                   </div>
                 </div>
 
@@ -81,23 +81,14 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="/Mariya_Babu_Resume.pdf"
-                  download="Mariya_Babu_Resume.pdf"
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:rotate-2"
-                >
-                  Download Resume
-                </a>
-                <a
-                  href="/Mariya_Babu_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 border-2 border-purple-400 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:bg-purple-400/20 hover:-rotate-2"
-                >
-                  View Resume
-                </a>
-              </div>
+              <a
+                href="https://docs.google.com/document/d/1pR6LVnry87e3XrBL9fPvimnH_KAxNIRX/edit?usp=drive_link&ouid=113586087436646147186&rtpof=true&sd=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:rotate-2"
+              >
+                Download CV
+              </a>
             </div>
 
             {/* Contact Form with 3D Effects */}

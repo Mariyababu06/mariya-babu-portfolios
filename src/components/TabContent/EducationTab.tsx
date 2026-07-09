@@ -2,19 +2,25 @@
 const EducationTab = () => {
   return (
     <div className="animate-fade-in">
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
         {[
           {
-            degree: 'B.Tech — Information Technology',
-            institution: 'KKR & KSR Institute of Technology & Sciences, Guntur',
-            period: 'Aug 2022 – Jun 2026',
-            grade: 'Graduating Jun 2026'
+            degree: 'B.Tech',
+            institution: 'KKR & KSR Institute of Technology & Sciences, Vinjampadu',
+            period: '2022 - 2026',
+            grade: 'CGPA: 7.23'
           },
           {
-            degree: 'Intermediate — MPC',
-            institution: 'Palanadu Junior College, Macharla',
-            period: '2020 – 2022',
-            grade: 'Score: 59.4%'
+            degree: 'Intermediate',
+            institution: 'Palnadu Junior College, Macharla',
+            period: '2020 - 2022',
+            grade: 'Score: 59%'
+          },
+          {
+            degree: 'Secondary Education',
+            institution: 'Z.P Boys High School, Macharla',
+            period: '2018 - 2020',
+            grade: 'Score: 85%'
           }
         ].map((edu, index) => (
           <div key={index} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105">
