@@ -5,22 +5,22 @@ const CertificationTab = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           {
-            title: 'Artificial Intelligence Fundamentals',
-            provider: 'IBM',
-            date: 'February 2025',
-            skills: ['AI Foundations', 'Machine Learning', 'Data Analysis']
+            title: 'Google Data Analytics Professional Certificate',
+            provider: 'Google · Coursera',
+            date: '2024',
+            skills: ['SQL', 'R', 'Tableau', 'Data Cleaning', 'Analytics']
           },
           {
-            title: 'Data Analysis with Python',
-            provider: 'IBM on Coursera',
-            date: 'December 2, 2024',
-            skills: ['Python', 'Pandas', 'NumPy']
+            title: 'IBM Data Science Professional Certificate',
+            provider: 'IBM · Coursera',
+            date: '2024',
+            skills: ['Python', 'Pandas', 'SQL', 'Data Visualization']
           },
           {
-            title: 'Unsupervised Learning, Recommenders, Reinforcement Learning',
-            provider: 'DeepLearning.AI on Coursera',
-            date: 'October 30, 2024',
-            skills: ['Deep Learning', 'Neural Networks', 'Reinforcement Learning']
+            title: 'Machine Learning Specialization',
+            provider: 'Andrew Ng · DeepLearning.AI · Coursera',
+            date: '2024',
+            skills: ['Supervised Learning', 'Neural Networks', 'Scikit-learn']
           }
         ].map((cert, index) => (
           <div key={index} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105">

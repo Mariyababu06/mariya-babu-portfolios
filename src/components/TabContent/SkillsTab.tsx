@@ -4,12 +4,15 @@ const SkillsTab = () => {
     <div className="animate-fade-in">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
-          { name: 'Machine Learning', level: 95, color: 'from-purple-500 to-purple-700', icon: '🤖' },
-          { name: 'Deep Learning', level: 90, color: 'from-blue-500 to-blue-700', icon: '🧠' },
-          { name: 'Data Science', level: 92, color: 'from-green-500 to-green-700', icon: '📊' },
-          { name: 'Python & R', level: 88, color: 'from-yellow-500 to-orange-500', icon: '🐍' },
-          { name: 'Big Data Analytics', level: 85, color: 'from-red-500 to-red-700', icon: '💾' },
-          { name: 'ML Engineering', level: 93, color: 'from-pink-500 to-pink-700', icon: '⚡' }
+          { name: 'Python (Pandas, NumPy)', level: 90, color: 'from-yellow-500 to-orange-500', icon: '🐍' },
+          { name: 'SQL & Data Querying', level: 88, color: 'from-blue-500 to-blue-700', icon: '🗄️' },
+          { name: 'Power BI & DAX', level: 92, color: 'from-yellow-400 to-amber-600', icon: '📊' },
+          { name: 'Advanced Excel', level: 90, color: 'from-green-500 to-green-700', icon: '📈' },
+          { name: 'Tableau', level: 80, color: 'from-cyan-500 to-blue-600', icon: '📉' },
+          { name: 'EDA & Data Cleaning', level: 90, color: 'from-purple-500 to-purple-700', icon: '🧹' },
+          { name: 'Statistical Analysis', level: 85, color: 'from-pink-500 to-pink-700', icon: '📐' },
+          { name: 'Scikit-learn / ML Basics', level: 82, color: 'from-red-500 to-red-700', icon: '🤖' },
+          { name: 'Business Storytelling', level: 88, color: 'from-emerald-500 to-teal-600', icon: '💡' }
         ].map((skill, index) => (
           <div key={index} className="group relative overflow-hidden bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl">
             <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-10 group-hover:opacity-20 transition-all duration-500`}></div>
