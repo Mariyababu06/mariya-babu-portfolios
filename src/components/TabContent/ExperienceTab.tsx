@@ -5,22 +5,16 @@ const ExperienceTab = () => {
       <div className="space-y-6">
         {[
           {
-            title: 'Machine Learning Intern',
+            title: 'Data Analyst Intern',
             company: 'Shamgar Software Solution',
-            period: '2025 - Current',
-            description: 'Working on advanced ML algorithms and machine learning solutions for enterprise clients.'
+            period: 'Jan 18, 2025 – Apr 18, 2025 · Visakhapatnam',
+            description: 'Cleaned and preprocessed 10+ business datasets in Python (Pandas, NumPy), cutting manual prep time by ~30%. Built classification and regression models in Scikit-learn to surface trends, and designed 5+ automated Power BI dashboards that reduced weekly manual reporting effort by ~4 hours.'
           },
           {
-            title: 'Data Science Intern',
-            company: 'Cognifyz Technologies',
-            period: 'Nov 1, 2024 - Dec 1, 2024',
-            description: 'Developed predictive models and performed data analysis for business insights.'
-          },
-          {
-            title: 'Data Science Intern',
-            company: 'Bharat Intern',
-            period: 'Aug 10, 2024 - Sep 10, 2024',
-            description: 'Built machine learning models and created data visualization dashboards.'
+            title: 'Actively Seeking — Data Analyst / Business Analyst',
+            company: 'Full-time role from June 2026',
+            period: 'Open to Hyderabad · Bangalore · Remote',
+            description: 'Final-year B.Tech (IT) student graduating June 2026. Looking for a full-time Data Analyst or Business Analyst opportunity where I can turn raw data into dashboards and business decisions. HRs & recruiters — let\'s connect!'
           }
         ].map((exp, index) => (
           <div key={index} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">

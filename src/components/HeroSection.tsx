@@ -39,12 +39,12 @@ const HeroSection = () => {
         </Float3D>
         <Float3D delay={1.5} intensity={0.6}>
           <p className="text-2xl md:text-3xl mb-8 text-gray-300">
-            Machine Learning Engineer
+            Aspiring Data Analyst | Business Intelligence Analyst
           </p>
         </Float3D>
         <Float3D delay={2} intensity={0.4}>
           <p className="text-lg md:text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
-            Transforming complex data into actionable insights with cutting-edge machine learning and deep learning solutions
+            Final-year B.Tech (IT) student and Data Analyst Intern with hands-on experience in Python, SQL, and Power BI. Open to full-time Data Analyst / Business Analyst roles from June 2026 — Hyderabad, Bangalore, or Remote.
           </p>
         </Float3D>
         <Float3D delay={2.5} intensity={0.8}>
