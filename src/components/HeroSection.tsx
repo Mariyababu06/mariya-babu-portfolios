@@ -1,5 +1,5 @@
 
-import profileAsset from '../assets/profile-new.png.asset.json';
+import profileAsset from '../assets/profile.png.asset.json';
 import Float3D from './Float3D';
 import Card3D from './Card3D';
 
