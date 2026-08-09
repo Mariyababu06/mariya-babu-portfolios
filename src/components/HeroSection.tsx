@@ -40,7 +40,7 @@ const HeroSection = () => {
         </Float3D>
         <Float3D delay={1.5} intensity={0.6}>
           <p className="text-2xl md:text-3xl mb-8 text-gray-300">
-            Aspiring Data Analyst | Business Intelligence Analyst
+            Data Analyst and Junior ML
           </p>
         </Float3D>
         <Float3D delay={2} intensity={0.4}>
