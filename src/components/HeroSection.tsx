@@ -1,5 +1,6 @@
 
 import profileAsset from '../assets/profile.png.asset.json';
+import resumeAsset from '../assets/Mariya_Babu_Resume.pdf.asset.json';
 import Float3D from './Float3D';
 import Card3D from './Card3D';
 
