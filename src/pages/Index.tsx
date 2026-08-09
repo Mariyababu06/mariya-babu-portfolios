@@ -131,6 +131,7 @@ const Index = () => {
       
       <Navigation />
       <HeroSection />
+      <SkillsHighlights />
       <AboutSection />
       <ContactSection />
     </div>
