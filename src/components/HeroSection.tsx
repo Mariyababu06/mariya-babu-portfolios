@@ -28,25 +28,31 @@ const HeroSection = () => {
           <Card3D intensity={0.8}>
             <img 
               src={profileAsset.url} 
-              alt="Maria Babu" 
-              className="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-purple-400 shadow-2xl hover:shadow-purple-400/50 transition-all duration-500 object-cover"
+              alt="Mariya Babu" 
+              className="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-purple-400 shadow-2xl hover:shadow-purple-400/50 transition-all duration-500 object-cover object-top"
             />
           </Card3D>
         </Float3D>
         <Float3D delay={1} intensity={0.8}>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
-            Maria Babu
+            Hi, I'm Mariya Babu
           </h1>
         </Float3D>
         <Float3D delay={1.5} intensity={0.6}>
           <p className="text-2xl md:text-3xl mb-8 text-gray-300">
-            Data Analyst and Junior ML
+            Data Analyst &amp; Aspiring Data Scientist
           </p>
         </Float3D>
         <Float3D delay={2} intensity={0.4}>
-          <p className="text-lg md:text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl mb-8 text-gray-400 max-w-2xl mx-auto">
             Final-year B.Tech (IT) student and Data Analyst Intern with hands-on experience in Python, SQL, and Power BI. Open to full-time Data Analyst / Business Analyst roles from June 2026 — Hyderabad, Bangalore, or Remote.
           </p>
+        </Float3D>
+        <Float3D delay={2.2} intensity={0.4}>
+          <div className="mb-12 space-y-1">
+            <p className="text-sm md:text-base text-gray-500 italic">"Data is the new oil, but like oil, it has to be refined to be valuable."</p>
+            <p className="text-sm md:text-base text-gray-500 italic">"In God we trust, all others must bring data."</p>
+          </div>
         </Float3D>
         <Float3D delay={2.5} intensity={0.8}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
