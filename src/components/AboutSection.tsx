@@ -82,34 +82,34 @@ const AboutSection = () => {
                      <div>
                        <h3 className="text-3xl font-bold text-white mb-2">My Journey</h3>
                        <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm border border-purple-500/50 animate-pulse">Data Analyst</span>
-                        <span className="px-3 py-1 bg-cyan-500/30 text-cyan-300 rounded-full text-sm border border-cyan-500/50 animate-pulse" style={{animationDelay: '0.5s'}}>Business Analyst</span>
-                        <span className="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm border border-green-500/50 animate-pulse" style={{animationDelay: '1s'}}>Open to Hire · Jun 2026</span>
+                         <span className="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm border border-purple-500/50 animate-pulse">Data Analyst</span>
+                         <span className="px-3 py-1 bg-cyan-500/30 text-cyan-300 rounded-full text-sm border border-cyan-500/50 animate-pulse" style={{animationDelay: '0.5s'}}>Aspiring Data Scientist</span>
+                         <span className="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm border border-green-500/50 animate-pulse" style={{animationDelay: '1s'}}>Open to Hire · Jun 2026</span>
                        </div>
                      </div>
                    </div>
 
                    {/* Enhanced Description */}
-                   <div className="space-y-6 text-gray-300 leading-relaxed">
-                     <p className="text-lg hover:text-white transition-colors duration-300">
-                       🌟 Hi, I'm Mariya — a final-year <span className="text-purple-400 font-semibold">B.Tech (IT)</span> student and <span className="text-cyan-400 font-semibold">Data Analyst Intern</span> who turns raw business data into dashboards and clear, actionable insights.
-                     </p>
-                     <p className="text-lg hover:text-white transition-colors duration-300">
-                       💡 I work fluently across <span className="text-pink-400 font-semibold">Python, SQL, Power BI, DAX, and Advanced Excel</span> — from cleaning messy datasets to building KPI dashboards, RFM customer segments, and forecast reports.
-                     </p>
-                     <p className="text-lg hover:text-white transition-colors duration-300">
-                       🎯 Actively seeking a <span className="text-yellow-400 font-semibold">full-time Data Analyst / Business Analyst</span> role starting June 2026. Open to relocation across Hyderabad, Bangalore, or Remote. If you're hiring, let's talk!
-                     </p>
-                   </div>
+                    <div className="space-y-6 text-gray-300 leading-relaxed">
+                      <p className="text-lg hover:text-white transition-colors duration-300">
+                        🌟 Hello! I'm Mariya Babu, a <span className="text-purple-400 font-semibold">Data Analyst</span> who enjoys turning raw, messy datasets into insights people can actually act on.
+                      </p>
+                      <p className="text-lg hover:text-white transition-colors duration-300">
+                        💡 I work mainly with <span className="text-pink-400 font-semibold">SQL, Python, and Power BI</span> — building dashboards, cleaning data, and running exploratory analysis. I've also built applied machine learning projects end-to-end, from customer segmentation to predictive modeling, and I'm actively growing toward a <span className="text-cyan-400 font-semibold">Junior Data Scientist</span> role.
+                      </p>
+                      <p className="text-lg hover:text-white transition-colors duration-300">
+                        🎯 I enjoy the parts of the job most people skip: digging into <span className="text-yellow-400 font-semibold">why the data looks the way it does</span> before jumping to conclusions. If you're hiring, let's talk!
+                      </p>
+                    </div>
 
-                   {/* Interactive Tech Stack */}
-                   <div className="mt-8">
-                     <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
-                       <span className="text-2xl animate-spin" style={{animationDuration: '3s'}}>⚡</span>
-                       Core Technologies
-                     </h4>
-                     <div className="flex flex-wrap gap-3">
-                       {['Python', 'SQL', 'Power BI', 'DAX', 'Advanced Excel', 'Tableau', 'Pandas', 'Scikit-learn'].map((tech, index) => (
+                    {/* Interactive Tech Stack */}
+                    <div className="mt-8">
+                      <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                        <span className="text-2xl animate-spin" style={{animationDuration: '3s'}}>⚡</span>
+                        Core Technologies
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {['SQL', 'Python', 'Power BI', 'Pandas', 'NumPy', 'Scikit-learn', 'CatBoost', 'XGBoost'].map((tech, index) => (
                          <span 
                            key={index} 
                            className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30 hover:scale-110 hover:bg-gradient-to-r hover:from-purple-500/40 hover:to-pink-500/40 transition-all duration-300 cursor-pointer animate-pulse"
@@ -132,28 +132,28 @@ const AboutSection = () => {
               { 
                 icon: '🎓', 
                 title: 'B.Tech in Information Technology', 
-                desc: 'KKR & KSR Institute of Tech & Sciences · Graduating Jun 2026',
+                desc: 'KKR & KSR Institute of Tech & Sciences · CGPA 7.21 · 2022–2026',
                 gradient: 'from-purple-500 to-purple-700',
                 delay: '0s'
               },
               { 
                 icon: '💼', 
-                title: '4-Month Data Analyst Internship', 
-                desc: 'Shamgar Software Solution — Python, SQL, Power BI dashboards',
+                title: '3 Internships', 
+                desc: 'Shamgar Software Solution (ML) · Cognifyz & Bharat Intern (Data Science)',
                 gradient: 'from-pink-500 to-pink-700',
                 delay: '0.2s'
               },
               { 
                 icon: '🏆', 
-                title: 'Google & IBM Certified', 
-                desc: 'Google Data Analytics + IBM Data Science Professional Certificates',
+                title: 'Certified in Data & ML', 
+                desc: 'IBM Data Analysis with Python + DeepLearning.AI Unsupervised Learning, Recommenders & RL',
                 gradient: 'from-cyan-500 to-cyan-700',
                 delay: '0.4s'
               },
               { 
                 icon: '🌟', 
-                title: '4 End-to-End Analytics Projects', 
-                desc: 'Customer segmentation, sales forecasting, HR attrition & ML deployment',
+                title: 'End-to-End ML Projects', 
+                desc: 'RFM customer segmentation, student performance prediction & churn modeling',
                 gradient: 'from-yellow-500 to-orange-500',
                 delay: '0.6s'
               }
