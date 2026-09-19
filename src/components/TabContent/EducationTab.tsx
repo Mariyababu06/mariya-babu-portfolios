@@ -8,7 +8,7 @@ const EducationTab = () => {
             degree: 'B.Tech',
             institution: 'KKR & KSR Institute of Technology & Sciences, Vinjampadu',
             period: '2022 - 2026',
-            grade: 'CGPA: 7.23'
+            grade: 'CGPA: 7.21'
           },
           {
             degree: 'Intermediate',
