@@ -1,6 +1,7 @@
 
 import React from 'react';
 import AnimatedSphere from './AnimatedSphere';
+import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
 
 const ContactSection = () => {
   return (
@@ -82,9 +83,8 @@ const ContactSection = () => {
               </div>
 
               <a
-                href="https://docs.google.com/document/d/1pR6LVnry87e3XrBL9fPvimnH_KAxNIRX/edit?usp=drive_link&ouid=113586087436646147186&rtpof=true&sd=true"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={cvAsset.url}
+                download="Mariya-Babu-CV.pdf"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:rotate-2"
               >
                 Download CV
