@@ -40,12 +40,12 @@ const HeroSection = () => {
         </Float3D>
         <Float3D delay={1.5} intensity={0.6}>
           <p className="text-2xl md:text-3xl mb-8 text-gray-300">
-            Data Analyst &amp; Aspiring Data Scientist
+            Data Analyst <span className="text-purple-400">|</span> Business Intelligence Analyst <span className="text-purple-400">|</span> Junior ML Engineer
           </p>
         </Float3D>
         <Float3D delay={2} intensity={0.4}>
           <p className="text-lg md:text-xl mb-8 text-gray-400 max-w-2xl mx-auto">
-            Final-year B.Tech (IT) student and Data Analyst Intern with hands-on experience in Python, SQL, and Power BI. Open to full-time Data Analyst / Business Analyst roles from June 2026 — Hyderabad, Bangalore, or Remote.
+            Recent B.Tech Information Technology graduate with internship experience in data analytics and machine learning. Skilled in SQL, Python, Power BI, dashboards, data storytelling, and predictive modeling. Available for opportunities in Hyderabad, Bengaluru, or remotely.
           </p>
         </Float3D>
         <Float3D delay={2.2} intensity={0.4}>
@@ -62,7 +62,7 @@ const HeroSection = () => {
               </a>
             </Card3D>
             <Card3D intensity={0.6}>
-              <a href="#contact" className="magnetic border-2 border-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-400/20 transition-colors block">
+              <a href="#Contact" className="magnetic border-2 border-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-400/20 transition-colors block">
                 Get In Touch
               </a>
             </Card3D>
