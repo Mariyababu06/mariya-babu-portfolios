@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
@@ -128,7 +127,6 @@ const Index = () => {
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s', transform: 'translate(-50%, -50%) translateZ(-20px)' }}></div>
       </div>
       
-      <Navigation />
       <HeroSection />
       <AboutSection />
       <ContactSection />

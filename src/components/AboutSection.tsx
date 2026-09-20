@@ -82,9 +82,9 @@ const AboutSection = () => {
                      <div>
                        <h3 className="text-3xl font-bold text-white mb-2">My Journey</h3>
                        <div className="flex gap-2">
-                         <span className="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm border border-purple-500/50 animate-pulse">Data Analyst</span>
-                         <span className="px-3 py-1 bg-cyan-500/30 text-cyan-300 rounded-full text-sm border border-cyan-500/50 animate-pulse" style={{animationDelay: '0.5s'}}>Aspiring Data Scientist</span>
-                         <span className="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm border border-green-500/50 animate-pulse" style={{animationDelay: '1s'}}>Open to Hire · Jun 2026</span>
+                          <span className="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm border border-purple-500/50 animate-pulse">Data Analyst</span>
+                          <span className="px-3 py-1 bg-cyan-500/30 text-cyan-300 rounded-full text-sm border border-cyan-500/50 animate-pulse" style={{animationDelay: '0.5s'}}>Business Intelligence Analyst</span>
+                          <span className="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm border border-green-500/50 animate-pulse" style={{animationDelay: '1s'}}>Available Immediately</span>
                        </div>
                      </div>
                    </div>
@@ -95,7 +95,7 @@ const AboutSection = () => {
                         🌟 Hello! I'm Mariya Babu, a <span className="text-purple-400 font-semibold">Data Analyst</span> who enjoys turning raw, messy datasets into insights people can actually act on.
                       </p>
                       <p className="text-lg hover:text-white transition-colors duration-300">
-                        💡 I work mainly with <span className="text-pink-400 font-semibold">SQL, Python, and Power BI</span> — building dashboards, cleaning data, and running exploratory analysis. I've also built applied machine learning projects end-to-end, from customer segmentation to predictive modeling, and I'm actively growing toward a <span className="text-cyan-400 font-semibold">Junior Data Scientist</span> role.
+                         💡 I work mainly with <span className="text-pink-400 font-semibold">SQL, Python, and Power BI</span> — building dashboards, cleaning data, and running exploratory analysis. I've also built applied machine learning projects end-to-end, from customer segmentation to predictive modeling, and I'm prepared for <span className="text-cyan-400 font-semibold">Junior ML Engineer</span> opportunities.
                       </p>
                       <p className="text-lg hover:text-white transition-colors duration-300">
                         🎯 I enjoy the parts of the job most people skip: digging into <span className="text-yellow-400 font-semibold">why the data looks the way it does</span> before jumping to conclusions. If you're hiring, let's talk!
