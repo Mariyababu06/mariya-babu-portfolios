@@ -17,13 +17,12 @@ declare global {
 }
 
 const App = () => {
-  // Initialize particles
   const initParticles = () => {
     if (typeof window !== 'undefined' && window.particlesJS) {
       window.particlesJS('particles-js', {
         particles: {
           number: {
-            value: 80,
+            value: 28,
             density: {
               enable: true,
               value_area: 800
@@ -60,7 +59,7 @@ const App = () => {
             }
           },
           line_linked: {
-            enable: true,
+            enable: false,
             distance: 150,
             color: '#7f5af0',
             opacity: 0.4,
@@ -68,7 +67,7 @@ const App = () => {
           },
           move: {
             enable: true,
-            speed: 6,
+            speed: 1.5,
             direction: 'none',
             random: false,
             straight: false,
@@ -85,11 +84,11 @@ const App = () => {
           detect_on: 'canvas',
           events: {
             onhover: {
-              enable: true,
+              enable: false,
               mode: 'repulse'
             },
             onclick: {
-              enable: true,
+              enable: false,
               mode: 'push'
             },
             resize: true
@@ -125,13 +124,12 @@ const App = () => {
     }
   };
 
-  // Initialize particles when component mounts
   React.useEffect(() => {
-    const timer = setTimeout(() => {
-      initParticles();
-    }, 100);
-    
-    return () => clearTimeout(timer);
+    const schedule = window.requestIdleCallback ?? ((callback: IdleRequestCallback) => window.setTimeout(callback, 350));
+    const cancel = window.cancelIdleCallback ?? ((id: number) => window.clearTimeout(id));
+    const taskId = schedule(() => initParticles());
+
+    return () => cancel(taskId as number);
   }, []);
 
   return (

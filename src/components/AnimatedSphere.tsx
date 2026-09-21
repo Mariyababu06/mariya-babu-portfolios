@@ -12,6 +12,8 @@ const AnimatedSphere = () => {
     let mouseY = 0;
     let targetX = 0;
     let targetY = 0;
+    let animationFrame = 0;
+    let isVisible = false;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = sphere.getBoundingClientRect();
@@ -20,6 +22,7 @@ const AnimatedSphere = () => {
     };
 
     const animate = () => {
+      if (!isVisible) return;
       targetX += (mouseX - targetX) * 0.05;
       targetY += (mouseY - targetY) * 0.05;
 
@@ -28,18 +31,29 @@ const AnimatedSphere = () => {
           perspective(1000px) 
           rotateX(${targetY * 30}deg) 
           rotateY(${targetX * 30}deg)
-          rotateZ(${Math.sin(Date.now() * 0.001) * 10}deg)
+          rotateZ(${Math.sin(Date.now() * 0.001) * 4}deg)
         `;
       }
 
-      requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-    animate();
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible && animationFrame === 0) animationFrame = requestAnimationFrame(animate);
+      if (!isVisible && animationFrame !== 0) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = 0;
+      }
+    }, { threshold: 0.05 });
 
+    visibilityObserver.observe(sphere);
+
+    document.addEventListener('mousemove', handleMouseMove);
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
+      visibilityObserver.disconnect();
+      if (animationFrame !== 0) cancelAnimationFrame(animationFrame);
     };
   }, []);
 
@@ -53,7 +67,7 @@ const AnimatedSphere = () => {
         }}
       >
         {/* Outer sphere rings */}
-        {[...Array(8)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <div
             key={i}
             className="absolute inset-0 rounded-full border-2 border-purple-400/30"
@@ -75,7 +89,7 @@ const AnimatedSphere = () => {
         />
         
         {/* Floating particles */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <div
             key={`particle-${i}`}
             className="absolute w-2 h-2 bg-purple-400 rounded-full"
