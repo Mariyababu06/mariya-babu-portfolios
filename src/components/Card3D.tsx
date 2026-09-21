@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 interface Card3DProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface Card3DProps {
 
 const Card3D: React.FC<Card3DProps> = ({ children, className = "", intensity = 1 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const frameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -20,14 +20,18 @@ const Card3D: React.FC<Card3DProps> = ({ children, className = "", intensity = 1
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
       
-      const rotateX = (e.clientY - centerY) / rect.height * -20 * intensity;
-      const rotateY = (e.clientX - centerX) / rect.width * 20 * intensity;
-      
-      setRotation({ x: rotateX, y: rotateY });
+      const rotateX = (e.clientY - centerY) / rect.height * -12 * intensity;
+      const rotateY = (e.clientX - centerX) / rect.width * 12 * intensity;
+
+      if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
+      frameRef.current = window.requestAnimationFrame(() => {
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
     };
 
     const handleMouseLeave = () => {
-      setRotation({ x: 0, y: 0 });
+      if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     };
 
     card.addEventListener('mousemove', handleMouseMove);
@@ -36,6 +40,7 @@ const Card3D: React.FC<Card3DProps> = ({ children, className = "", intensity = 1
     return () => {
       card.removeEventListener('mousemove', handleMouseMove);
       card.removeEventListener('mouseleave', handleMouseLeave);
+      if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
     };
   }, [intensity]);
 
@@ -44,7 +49,7 @@ const Card3D: React.FC<Card3DProps> = ({ children, className = "", intensity = 1
       ref={cardRef}
       className={`transition-all duration-300 transform-gpu ${className}`}
       style={{
-        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+        transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
         transformStyle: 'preserve-3d',
       }}
     >
