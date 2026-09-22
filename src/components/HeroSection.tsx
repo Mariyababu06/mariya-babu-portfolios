@@ -2,7 +2,7 @@
 import Float3D from './Float3D';
 import Card3D from './Card3D';
 
-const profileImage = '/lovable-uploads/38c13c04-c458-4060-992c-9279161cbe7a.png';
+const profileImage = '/mariya-babu-profile.png';
 
 const HeroSection = () => {
   return (

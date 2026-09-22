@@ -1,9 +1,40 @@
 
-import React from 'react';
+import React, { FormEvent, useState } from 'react';
 import AnimatedSphere from './AnimatedSphere';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
 
+const responseSheetUrl = 'https://script.google.com/macros/s/AKfycbwbfJXV1ez01_v-meXAdk2foZMUKeS7bZ31pYlCo_ZuAvUWxO6E84hb5GMNxFwSqAE1/exec';
+
 const ContactSection = () => {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSending(true);
+    setStatus('idle');
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const body = new URLSearchParams();
+    formData.forEach((value, key) => body.append(key, String(value)));
+
+    try {
+      await fetch(responseSheetUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body,
+      });
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section id="Contact" className="py-20 relative overflow-hidden">
       {/* 3D Background Effects */}
@@ -93,10 +124,11 @@ const ContactSection = () => {
 
             {/* Contact Form with 3D Effects */}
             <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 transform hover:scale-[1.02] transition-all duration-500">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="group">
                   <input
                     type="text"
+                    name="name"
                     placeholder="Your Name"
                     className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 transform group-hover:scale-[1.02] focus:scale-[1.02]"
                     required
@@ -105,6 +137,7 @@ const ContactSection = () => {
                 <div className="group">
                   <input
                     type="email"
+                    name="email"
                     placeholder="Your Email"
                     className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 transform group-hover:scale-[1.02] focus:scale-[1.02]"
                     required
@@ -112,6 +145,7 @@ const ContactSection = () => {
                 </div>
                 <div className="group">
                   <textarea
+                    name="message"
                     rows={6}
                     placeholder="Your Message"
                     className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 transform group-hover:scale-[1.02] focus:scale-[1.02] resize-none"
@@ -119,10 +153,17 @@ const ContactSection = () => {
                 </div>
                 <button
                   type="submit"
+                  disabled={isSending}
                   className="w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:rotate-1"
                 >
-                  Send Message
+                  {isSending ? 'Sending...' : 'Send Message'}
                 </button>
+                {status === 'success' && (
+                  <p className="text-center text-green-300" role="status">Thanks — your message has been sent.</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-center text-red-300" role="alert">Something went wrong. Please email me directly.</p>
+                )}
               </form>
             </div>
           </div>
