@@ -31,7 +31,6 @@ const HeroSection = () => {
               src={profileImage}
               alt="Mariya Babu" 
               loading="eager"
-              fetchPriority="high"
               className="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-purple-400 shadow-2xl hover:shadow-purple-400/50 transition-all duration-500 object-cover object-top"
             />
           </Card3D>
