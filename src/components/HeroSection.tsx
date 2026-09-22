@@ -1,7 +1,8 @@
 
 import Float3D from './Float3D';
 import Card3D from './Card3D';
-import profileAsset from '../assets/mariya-babu-profile.png.asset.json';
+
+const profileImage = '/mariya-babu-profile.png';
 
 const HeroSection = () => {
   return (
@@ -27,7 +28,7 @@ const HeroSection = () => {
         <Float3D delay={0.5} intensity={1.2} className="mb-8">
           <Card3D intensity={0.8}>
             <img 
-              src={profileAsset.url}
+              src={profileImage}
               alt="Mariya Babu" 
               loading="eager"
               className="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-purple-400 shadow-2xl hover:shadow-purple-400/50 transition-all duration-500 object-cover object-top"
