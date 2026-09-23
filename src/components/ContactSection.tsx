@@ -3,7 +3,7 @@ import React, { FormEvent, useState } from 'react';
 import AnimatedSphere from './AnimatedSphere';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
 
-const responseSheetUrl = 'https://script.google.com/macros/s/AKfycbw7TYNiC0zDlUeEejvTB0gchgqE2YdX5EdDlegFo7XddwBIadaS-6CvdynSpSy2xbXAEw/exec';
+const responseSheetUrl = 'https://script.google.com/macros/s/AKfycbxaAjTXOSglCG2kZUsAkYNdOpALUNtkL_aLfId12CiYCogDu4UT_KXBfdAQEpHBZhPu5g/exec';
 
 const ContactSection = () => {
   const [isSending, setIsSending] = useState(false);
