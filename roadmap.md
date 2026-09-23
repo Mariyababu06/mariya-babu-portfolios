@@ -5,5 +5,6 @@
 - [ ] Add the uploaded resume as a downloadable portfolio asset
 - [x] Replace the current profile photo with the uploaded portrait
 - [x] Connect the contact form to the provided Google Sheets response endpoint
-- [ ] Switch to the latest Google Sheets URL and verify it with a test inquiry
+- [x] Switch the contact form to the latest Google Sheets URL
+- [ ] Verify a test inquiry after the sheet endpoint allows access (test returned HTTP 403)
 - [ ] Verify the complete page and contact flow
