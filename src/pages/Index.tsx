@@ -60,6 +60,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 };
