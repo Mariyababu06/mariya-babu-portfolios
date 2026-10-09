@@ -1,10 +1,10 @@
 # Roadmap
 
-- [ ] Fix navigation so About, Skills, Projects, and Contact links reach visible sections
-- [ ] Update student wording to recent graduate throughout the portfolio
-- [ ] Add the uploaded resume as a downloadable portfolio asset
-- [x] Replace the current profile photo with the uploaded portrait
-- [x] Connect the contact form to the provided Google Sheets response endpoint
-- [x] Switch the contact form to the latest Google Sheets URL
-- [ ] Verify a test inquiry after the sheet endpoint allows access (test returned HTTP 403)
+- [ ] Recreate the portfolio as a cinematic, streaming-inspired experience based on Mariya's analyst profile
+- [ ] Make About, Skills, Projects, and Contact navigation reach their visible sections
+- [x] Use recent-graduate and immediately-available wording
+- [x] Add the uploaded CV as a downloadable portfolio asset
+- [x] Replace the profile photo with the uploaded portrait
+- [x] Keep the contact form connected to the latest provided Google Sheets URL
+- [ ] Verify a test inquiry after the sheet endpoint permits access (last test returned HTTP 403)
 - [ ] Verify the complete page and contact flow
