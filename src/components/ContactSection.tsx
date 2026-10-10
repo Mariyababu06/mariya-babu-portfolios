@@ -1,7 +1,9 @@
 
 import React, { FormEvent, useState } from 'react';
-import AnimatedSphere from './AnimatedSphere';
+import { ArrowUpRight, Mail, Phone, Send } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
+import { profile } from '../data/portfolio';
 
 const responseSheetUrl = 'https://script.google.com/macros/s/AKfycbxaAjTXOSglCG2kZUsAkYNdOpALUNtkL_aLfId12CiYCogDu4UT_KXBfdAQEpHBZhPu5g/exec';
 
@@ -36,136 +38,83 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="Contact" className="py-20 relative overflow-hidden">
-      {/* 3D Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.1)_0%,transparent_70%)]" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ready to transform your data into actionable insights? Let's create something amazing together.
-          </p>
-        </div>
-
-        {/* 3D Animated Sphere */}
-        <AnimatedSphere />
-
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <h3 className="text-3xl font-bold text-white mb-8">Contact.</h3>
-              
-              <div className="space-y-6">
-                <div className="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:rotate-1">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                      <i className="fas fa-envelope text-white text-xl"></i>
-                    </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Email</p>
-                      <p className="text-white font-semibold">mariyababuit@mail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-rotate-1">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                      <i className="fas fa-phone text-white text-xl"></i>
-                    </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Phone</p>
-                      <p className="text-white font-semibold">+91 7993642366</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Links with 3D Effects */}
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-white">Follow Me</h4>
-                <div className="flex space-x-4">
-                  {[
-                    { icon: 'fab fa-linkedin', href: 'https://www.linkedin.com/in/mariya-babu-854331257/', color: 'from-blue-600 to-blue-700' },
-                    { icon: 'fab fa-github', href: 'https://github.com/Mariyababu06', color: 'from-gray-700 to-gray-800' },
-                    { icon: 'fab fa-twitter', href: 'https://x.com/ruben_babu29153?t=sQMRoBP5OXUoOrWx4DaELA&s=09', color: 'from-blue-400 to-blue-500' },
-                    { icon: 'fab fa-instagram', href: 'https://www.instagram.com/_.thenameisruben._/', color: 'from-pink-500 to-purple-500' },
-                    { icon: 'fas fa-code', href: 'https://leetcode.com/u/X25sJQOCq0/', color: 'from-orange-500 to-red-500' }
-                  ].map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-14 h-14 bg-gradient-to-br ${social.color} rounded-xl flex items-center justify-center text-white text-xl transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:shadow-2xl hover:shadow-purple-500/25`}
-                      style={{
-                        transform: `perspective(1000px) rotateX(10deg) rotateY(${index * 5}deg)`,
-                      }}
-                    >
-                      <i className={social.icon}></i>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <a
-                href={cvAsset.url}
-                download="Mariya-Babu-CV.pdf"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:rotate-2"
-              >
-                Download CV
+    <section id="contact" className="scroll-mt-20 border-t border-line/10 bg-ink-2 py-24 md:py-28">
+      <div className="gutter mx-auto max-w-screen-2xl">
+        <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
+          <div>
+            <p className="eyebrow">05 / The next chapter</p>
+            <h2 className="section-heading mt-4">Let’s talk<br />about data.</h2>
+            <p className="mt-5 max-w-md text-base leading-7 text-mist">Open to entry-level data analyst and business intelligence opportunities. I’d love to hear what your team is working on.</p>
+            <div className="mt-9 space-y-5">
+              <a href={`mailto:${profile.email}`} className="group flex items-center gap-4 text-bone">
+                <Mail aria-hidden="true" className="h-5 w-5 text-crimson-2" />
+                <span className="min-w-0 break-all text-sm">{profile.email}</span>
+                <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 shrink-0 text-smoke transition-colors group-hover:text-crimson-2" />
+              </a>
+              <a href={`tel:${profile.phone.replaceAll(' ', '')}`} className="group flex items-center gap-4 text-bone">
+                <Phone aria-hidden="true" className="h-5 w-5 text-crimson-2" />
+                <span className="text-sm">{profile.phone}</span>
+                <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 text-smoke transition-colors group-hover:text-crimson-2" />
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-bone">
+                <span aria-hidden="true" className="flex h-5 w-5 items-center justify-center text-xs font-bold text-crimson-2">in</span>
+                <span className="text-sm">LinkedIn</span>
+                <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 text-smoke transition-colors group-hover:text-crimson-2" />
               </a>
             </div>
+          </div>
 
-            {/* Contact Form with 3D Effects */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 transform hover:scale-[1.02] transition-all duration-500">
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="group">
+          <div className="border border-line/10 bg-ink p-6 sm:p-8">
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <div>
+                  <label htmlFor="contact-name" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-mist">Your name</label>
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
-                    placeholder="Your Name"
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 transform group-hover:scale-[1.02] focus:scale-[1.02]"
+                    autoComplete="name"
+                    placeholder="Name"
+                    className="w-full rounded-sm border border-line/15 bg-ink-2 px-4 py-3 text-bone placeholder:text-smoke focus:border-crimson-2 focus:outline-none focus:ring-1 focus:ring-crimson-2"
                     required
                   />
                 </div>
-                <div className="group">
+                <div>
+                  <label htmlFor="contact-email" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-mist">Email address</label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
-                    placeholder="Your Email"
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 transform group-hover:scale-[1.02] focus:scale-[1.02]"
+                    autoComplete="email"
+                    placeholder="you@example.com"
+                    className="w-full rounded-sm border border-line/15 bg-ink-2 px-4 py-3 text-bone placeholder:text-smoke focus:border-crimson-2 focus:outline-none focus:ring-1 focus:ring-crimson-2"
                     required
                   />
                 </div>
-                <div className="group">
+                <div>
+                  <label htmlFor="contact-message" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-mist">Message</label>
                   <textarea
+                    id="contact-message"
                     name="message"
-                    rows={6}
-                    placeholder="Your Message"
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 transform group-hover:scale-[1.02] focus:scale-[1.02] resize-none"
+                    rows={5}
+                    placeholder="How can we work together?"
+                    className="w-full resize-y rounded-sm border border-line/15 bg-ink-2 px-4 py-3 text-bone placeholder:text-smoke focus:border-crimson-2 focus:outline-none focus:ring-1 focus:ring-crimson-2"
                   ></textarea>
                 </div>
-                <button
+                <Button
                   type="submit"
                   disabled={isSending}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:rotate-1"
+                  className="h-12 w-full justify-between rounded-sm bg-crimson px-5 text-primary-foreground hover:bg-crimson-2"
                 >
-                  {isSending ? 'Sending...' : 'Send Message'}
-                </button>
+                  {isSending ? 'Sending…' : 'Send message'}
+                  <Send aria-hidden="true" />
+                </Button>
                 {status === 'success' && (
-                  <p className="text-center text-green-300" role="status">Thanks — your message has been sent.</p>
+                  <p className="text-sm text-status-success" role="status">Thanks — your message has been sent.</p>
                 )}
                 {status === 'error' && (
-                  <p className="text-center text-red-300" role="alert">Something went wrong. Please email me directly.</p>
+                  <p className="text-sm text-destructive" role="alert">Something went wrong. Please email me directly.</p>
                 )}
               </form>
-            </div>
           </div>
         </div>
       </div>
