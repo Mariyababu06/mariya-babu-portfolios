@@ -18,8 +18,8 @@ export const projects = [
     genre: 'CUSTOMER ANALYTICS',
     title: 'RFM Customer Segmentation',
     description:
-      'Analyzed 824K+ transactions and segmented 5,878 customers with SQL and K-Means. A Power BI and DAX dashboard turns the segments into clear retention priorities.',
-    tools: ['SQL', 'K-Means', 'Power BI', 'DAX'],
+      'Analyzed 824K+ transactions and segmented 5,878 customers with SQL and K-Means. A Power BI dashboard turns the segments into clear retention priorities.',
+    tools: ['SQL', 'K-Means', 'Power BI', 'DAX', 'Streamlit'],
     signal: '824K+ transactions analyzed',
   },
   {
@@ -70,7 +70,7 @@ export const skillGenres = [
   {
     name: 'Business Intelligence',
     detail: 'Build clear, decision-ready reporting.',
-    skills: ['Power BI', 'DAX', 'Excel', 'KPI dashboards'],
+    skills: ['Power BI', 'DAX', 'Advanced Excel', 'Tableau', 'KPI dashboards'],
   },
   {
     name: 'Data Analysis',

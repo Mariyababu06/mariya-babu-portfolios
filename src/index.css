@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ink: 218 28% 8%;
+  --ink-2: 218 24% 11%;
+  --ink-3: 218 22% 15%;
+  --crimson: 351 69% 49%;
+  --crimson-2: 351 76% 62%;
+  --bone: 40 18% 94%;
+  --mist: 216 10% 72%;
+  --smoke: 216 9% 53%;
+  --line: 216 18% 82%;
+  --status-success: 145 55% 55%;
+  --background: 218 28% 8%;
+  --foreground: 40 18% 94%;
+  --primary: 351 69% 49%;
+  --primary-foreground: 0 0% 100%;
+  --border: 216 18% 82%;
+  --input: 216 18% 82%;
+  --ring: 351 76% 62%;
+  --radius: 0.25rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1290,6 +1311,77 @@ form button:hover {
         font-size: 14px;
         padding: 12px 18px;
     }
+}
+
+/* Cinematic portfolio styling, isolated from the retired portfolio styles below. */
+.series-portfolio,
+.series-portfolio * {
+  font-family: Inter, sans-serif;
+}
+
+.series-portfolio .font-display {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.series-portfolio nav {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.series-portfolio .gutter {
+  width: min(100% - 3rem, 88rem);
+}
+
+.series-portfolio .eyebrow {
+  color: hsl(var(--crimson-2));
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.series-portfolio .section-heading {
+  color: hsl(var(--bone));
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.series-portfolio .billboard {
+  min-height: min(52rem, calc(100svh - 4rem));
+  background: hsl(var(--ink));
+}
+
+.series-portfolio .billboard-photo {
+  object-position: center 18%;
+}
+
+.series-portfolio .billboard-shade {
+  background: linear-gradient(90deg, hsl(var(--ink) / 0.96) 0%, hsl(var(--ink) / 0.88) 34%, hsl(var(--ink) / 0.38) 69%, hsl(var(--ink) / 0.12) 100%), linear-gradient(0deg, hsl(var(--ink) / 0.92) 0%, transparent 44%);
+}
+
+@media (max-width: 767px) {
+  .series-portfolio .gutter {
+    width: min(100% - 2rem, 88rem);
+  }
+
+  .series-portfolio .billboard {
+    min-height: 46rem;
+  }
+
+  .series-portfolio .billboard-photo {
+    height: 64%;
+    object-position: center 14%;
+  }
+
+  .series-portfolio .billboard-shade {
+    background: linear-gradient(0deg, hsl(var(--ink)) 5%, hsl(var(--ink) / 0.93) 37%, hsl(var(--ink) / 0.3) 75%, hsl(var(--ink) / 0.12) 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
