@@ -1,5 +1,5 @@
 
-import React, { FormEvent, useState } from 'react';
+import { type FormEvent, useState } from 'react';
 import { ArrowUpRight, Mail, Phone, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
@@ -51,7 +51,7 @@ const ContactSection = () => {
                 <span className="min-w-0 break-all text-sm">{profile.email}</span>
                 <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 shrink-0 text-smoke transition-colors group-hover:text-crimson-2" />
               </a>
-              <a href={`tel:${profile.phone.replaceAll(' ', '')}`} className="group flex items-center gap-4 text-bone">
+              <a href={`tel:${profile.phone.replace(/\s/g, '')}`} className="group flex items-center gap-4 text-bone">
                 <Phone aria-hidden="true" className="h-5 w-5 text-crimson-2" />
                 <span className="text-sm">{profile.phone}</span>
                 <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 text-smoke transition-colors group-hover:text-crimson-2" />

@@ -19,6 +19,16 @@ export default {
 		},
 		extend: {
 			colors: {
+				ink: 'hsl(var(--ink) / <alpha-value>)',
+				'ink-2': 'hsl(var(--ink-2) / <alpha-value>)',
+				'ink-3': 'hsl(var(--ink-3) / <alpha-value>)',
+				crimson: 'hsl(var(--crimson) / <alpha-value>)',
+				'crimson-2': 'hsl(var(--crimson-2) / <alpha-value>)',
+				bone: 'hsl(var(--bone) / <alpha-value>)',
+				mist: 'hsl(var(--mist) / <alpha-value>)',
+				smoke: 'hsl(var(--smoke) / <alpha-value>)',
+				line: 'hsl(var(--line) / <alpha-value>)',
+				'status-success': 'hsl(var(--status-success) / <alpha-value>)',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -67,6 +77,10 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				display: ['Bebas Neue', 'sans-serif'],
+				sans: ['Inter', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
