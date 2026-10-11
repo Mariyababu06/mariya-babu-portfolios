@@ -24,8 +24,8 @@ const SeriesPortfolio = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen overflow-hidden bg-ink text-bone">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/90 backdrop-blur-lg">
+    <div className="series-portfolio min-h-screen overflow-hidden bg-ink text-bone">
+      <header className="sticky top-0 z-40 border-b border-line/10 bg-ink/90 backdrop-blur-lg">
         <nav aria-label="Main navigation" className="gutter mx-auto flex min-h-16 max-w-screen-2xl items-center justify-between gap-6">
           <a href="#home" className="shrink-0 font-display text-xl uppercase tracking-wide text-bone" onClick={() => setMenuOpen(false)}>
             Mariya Babu<span className="ml-2 text-crimson">/</span>
@@ -36,7 +36,7 @@ const SeriesPortfolio = () => {
                 {item.label}
               </a>
             ))}
-            <Button asChild size="sm" className="rounded-sm bg-crimson px-4 text-white hover:bg-crimson-2">
+            <Button asChild size="sm" className="rounded-sm bg-crimson px-4 text-primary-foreground hover:bg-crimson-2">
               <a href={cvAsset.url} download="Mariya-Babu-CV.pdf" aria-label="Download Mariya Babu’s CV">
                 <Download aria-hidden="true" /> CV
               </a>
@@ -54,10 +54,10 @@ const SeriesPortfolio = () => {
           </Button>
         </nav>
         {menuOpen && (
-          <div className="gutter border-t border-white/10 py-3 md:hidden">
+          <div className="gutter border-t border-line/10 py-3 md:hidden">
             <div className="mx-auto flex max-w-screen-2xl flex-col">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-white/5 py-3 text-sm text-mist hover:text-bone">
+                <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-line/5 py-3 text-sm text-mist hover:text-bone">
                   {item.label}
                 </a>
               ))}
@@ -108,14 +108,14 @@ const SeriesPortfolio = () => {
         </section>
 
         <section aria-label="Portfolio highlights" className="border-y border-white/10 bg-ink-2">
-          <div className="gutter mx-auto grid max-w-screen-2xl grid-cols-2 divide-x divide-white/10 py-6 md:grid-cols-4">
+          <div className="gutter mx-auto grid max-w-screen-2xl grid-cols-2 divide-x divide-line/10 py-6 md:grid-cols-4">
             {[
               ['824K+', 'Transactions analyzed'],
               ['5,878', 'Customers segmented'],
               ['3', 'Internship experiences'],
               ['0.88', 'Student model R²'],
             ].map(([metric, caption]) => (
-              <div key={caption} className="px-4 py-3 first:pl-0 md:px-7">
+              <div key={caption} className="min-w-0 px-4 py-3 first:pl-0 md:px-7">
                 <p className="font-display text-3xl text-bone">{metric}</p>
                 <p className="mt-1 text-xs text-smoke sm:text-sm">{caption}</p>
               </div>
@@ -136,7 +136,7 @@ const SeriesPortfolio = () => {
               <p className="mt-6 text-base leading-8 text-mist">
                 From writing analytical SQL and exploring large datasets to shaping Power BI dashboards, I focus on the question behind the numbers. My project work also includes practical machine-learning models—from customer segmentation to performance prediction.
               </p>
-              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/10 pt-5 text-sm text-mist">
+              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-line/10 pt-5 text-sm text-mist">
                 <span>{profile.education}</span>
                 <span>{profile.location}</span>
                 <span className="text-crimson-2">{profile.availability}</span>
@@ -154,7 +154,7 @@ const SeriesPortfolio = () => {
               </div>
               <span className="text-sm text-smoke">Three chapters in data & machine learning</span>
             </div>
-            <div className="divide-y divide-white/10 border-y border-white/10">
+            <div className="divide-y divide-line/10 border-y border-line/10">
               {experience.map((entry, index) => (
                 <article key={entry.episode} className="grid gap-4 py-7 sm:grid-cols-[64px_1fr_auto] sm:items-start sm:gap-7">
                   <span className="font-display text-2xl text-crimson-2">S01:{entry.episode}</span>
@@ -200,9 +200,9 @@ const SeriesPortfolio = () => {
                 More on GitHub <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </a>
             </div>
-            <div className="grid gap-px border border-white/10 bg-white/10 md:grid-cols-3">
+            <div className="grid gap-px border border-line/10 bg-line/10 md:grid-cols-3">
               {projects.map((project) => (
-                <a key={project.episode} href={profile.github} target="_blank" rel="noopener noreferrer" className="group flex min-h-[360px] flex-col bg-ink p-6 transition-colors hover:bg-ink-3 sm:p-8">
+                <article key={project.episode} className="flex min-h-[360px] flex-col bg-ink p-6 transition-colors hover:bg-ink-3 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <span className="font-display text-5xl text-crimson/80">{project.episode}</span>
                     <span className="text-right text-[10px] font-semibold uppercase tracking-[0.16em] text-smoke">{project.genre}</span>
@@ -214,9 +214,9 @@ const SeriesPortfolio = () => {
                   </div>
                   <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-white/10 pt-4">
                     {project.tools.map((tool) => <span key={tool} className="text-xs text-smoke">{tool}</span>)}
-                    <span className="ml-auto inline-flex items-center gap-1 text-xs text-bone transition-colors group-hover:text-crimson-2">View project <ArrowRight aria-hidden="true" className="h-3 w-3" /></span>
+                    <span className="ml-auto inline-flex items-center gap-1 text-xs text-smoke">Selected project</span>
                   </div>
-                </a>
+                </article>
               ))}
             </div>
           </div>
@@ -245,12 +245,12 @@ const SeriesPortfolio = () => {
         </section>
 
         <section className="gutter py-16">
-          <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-6 border-b border-white/10 pb-12 sm:flex-row sm:items-center">
+          <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-6 border-b border-line/10 pb-12 sm:flex-row sm:items-center">
             <div>
               <p className="eyebrow">The complete story</p>
               <h2 className="mt-3 font-display text-4xl uppercase text-bone">Mariya’s CV</h2>
             </div>
-            <Button asChild size="lg" className="w-fit rounded-sm bg-crimson px-6 text-white hover:bg-crimson-2">
+            <Button asChild size="lg" className="w-fit rounded-sm bg-crimson px-6 text-primary-foreground hover:bg-crimson-2">
               <a href={cvAsset.url} download="Mariya-Babu-CV.pdf"><Download aria-hidden="true" /> Download CV</a>
             </Button>
           </div>
