@@ -17,6 +17,18 @@
   --foreground: 40 18% 94%;
   --primary: 351 69% 49%;
   --primary-foreground: 0 0% 100%;
+  --secondary: 218 22% 15%;
+  --secondary-foreground: 40 18% 94%;
+  --muted: 218 22% 15%;
+  --muted-foreground: 216 10% 72%;
+  --accent: 218 22% 15%;
+  --accent-foreground: 40 18% 94%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --card: 218 24% 11%;
+  --card-foreground: 40 18% 94%;
+  --popover: 218 24% 11%;
+  --popover-foreground: 40 18% 94%;
   --border: 216 18% 82%;
   --input: 216 18% 82%;
   --ring: 351 76% 62%;
@@ -24,9 +36,6 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
@@ -40,8 +49,8 @@ body {
 }
 
 body {
-    background: #080808;
-    color: #fff;
+    background: hsl(var(--ink));
+    color: hsl(var(--bone));
     overflow-x: hidden;
 }
 
@@ -1347,9 +1356,21 @@ form button:hover {
 .series-portfolio .section-heading {
   color: hsl(var(--bone));
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-size: 2.5rem;
   font-weight: 400;
   line-height: 0.98;
+}
+
+@media (min-width: 640px) {
+  .series-portfolio .section-heading {
+    font-size: 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .series-portfolio .section-heading {
+    font-size: 4.25rem;
+  }
 }
 
 .series-portfolio .billboard {
@@ -1363,6 +1384,40 @@ form button:hover {
 
 .series-portfolio .billboard-shade {
   background: linear-gradient(90deg, hsl(var(--ink) / 0.96) 0%, hsl(var(--ink) / 0.88) 34%, hsl(var(--ink) / 0.38) 69%, hsl(var(--ink) / 0.12) 100%), linear-gradient(0deg, hsl(var(--ink) / 0.92) 0%, transparent 44%);
+}
+
+.series-portfolio form input,
+.series-portfolio form textarea {
+  margin: 0;
+  border: 1px solid hsl(var(--line) / 0.15);
+  background: hsl(var(--ink-2));
+  padding: 0.75rem 1rem;
+  color: hsl(var(--bone));
+  border-radius: 0.125rem;
+  font-size: 1rem;
+  backdrop-filter: none;
+}
+
+.series-portfolio form button {
+  margin-top: 0;
+  border: 0;
+  border-radius: 0.125rem;
+  padding: 0.75rem 1.25rem;
+  background-color: hsl(var(--crimson));
+  background-image: none;
+  color: hsl(var(--primary-foreground));
+}
+
+.series-portfolio form button:hover {
+  background-color: hsl(var(--crimson-2));
+  background-image: none;
+}
+
+.series-portfolio form input:focus,
+.series-portfolio form textarea:focus {
+  border-color: hsl(var(--crimson-2));
+  box-shadow: 0 0 0 1px hsl(var(--crimson-2));
+  outline: none;
 }
 
 @media (max-width: 767px) {

@@ -5,7 +5,7 @@ export const profile = {
   availability: 'Available immediately',
   education: 'B.Tech, Information Technology · 2022–2026',
   summary:
-    'I turn complex datasets into clear answers: useful dashboards, reliable analysis, and practical machine-learning work.',
+    'Recent Information Technology graduate focused on turning complex data into clear business insights through analysis, dashboards, and practical machine learning.',
   email: 'mariyababuit@gmail.com',
   phone: '+91 7993642366',
   github: 'https://github.com/Mariyababu06',
