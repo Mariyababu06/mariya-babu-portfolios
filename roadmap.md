@@ -7,4 +7,4 @@
 - [x] Replace the profile photo with the uploaded portrait
 - [x] Keep the contact form connected to the latest provided Google Sheets URL
 - [ ] Verify a test inquiry after the sheet endpoint permits access (last test returned HTTP 403)
-- [ ] Verify the complete page and contact flow
+- [x] Verify the complete page layout, portrait, navigation, mobile view, and contact form surface

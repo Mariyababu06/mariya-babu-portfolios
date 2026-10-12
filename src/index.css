@@ -1389,6 +1389,10 @@ form button:hover {
 .series-portfolio form input,
 .series-portfolio form textarea {
   margin: 0;
+  border: 1px solid hsl(var(--line) / 0.15);
+  background: hsl(var(--ink-2));
+  padding: 0.75rem 1rem;
+  color: hsl(var(--bone));
   border-radius: 0.125rem;
   font-size: 1rem;
   backdrop-filter: none;
@@ -1396,7 +1400,24 @@ form button:hover {
 
 .series-portfolio form button {
   margin-top: 0;
+  border: 0;
   border-radius: 0.125rem;
+  padding: 0.75rem 1.25rem;
+  background-color: hsl(var(--crimson));
+  background-image: none;
+  color: hsl(var(--primary-foreground));
+}
+
+.series-portfolio form button:hover {
+  background-color: hsl(var(--crimson-2));
+  background-image: none;
+}
+
+.series-portfolio form input:focus,
+.series-portfolio form textarea:focus {
+  border-color: hsl(var(--crimson-2));
+  box-shadow: 0 0 0 1px hsl(var(--crimson-2));
+  outline: none;
 }
 
 @media (max-width: 767px) {
