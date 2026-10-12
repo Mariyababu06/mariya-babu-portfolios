@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ArrowDown, ArrowRight, Download, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
-import profileImage from '../assets/profile.png.asset.json';
 import {
   certifications,
   experience,
@@ -73,7 +72,7 @@ const SeriesPortfolio = () => {
       <main>
         <section id="home" className="billboard relative isolate flex min-h-[700px] items-end overflow-hidden md:min-h-[760px]">
           <img
-            src={profileImage.url}
+            src="/mariya-babu-profile.png"
             alt="Portrait of Mariya Babu"
             fetchPriority="high"
             className="billboard-photo absolute inset-y-0 right-0 h-full w-full object-cover object-[center_18%] md:w-[67%] md:object-[center_16%]"
@@ -90,9 +89,7 @@ const SeriesPortfolio = () => {
               <p className="mt-6 max-w-xl text-lg font-medium text-bone sm:text-xl">
                 Data Analyst <span className="text-crimson-2">/</span> Business Intelligence Analyst
               </p>
-              <p className="mt-4 max-w-lg text-base leading-7 text-mist">
-                {profile.summary} B.Tech Information Technology graduate, ready to bring analysis and curiosity to a new team.
-              </p>
+              <p className="mt-4 max-w-lg text-base leading-7 text-mist">{profile.summary}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="rounded-sm bg-crimson px-6 text-primary-foreground hover:bg-crimson-2">
                   <a href="#originals">Explore my work <ArrowRight aria-hidden="true" /></a>
