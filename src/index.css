@@ -24,9 +24,6 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
@@ -40,8 +37,8 @@ body {
 }
 
 body {
-    background: #080808;
-    color: #fff;
+    background: hsl(var(--ink));
+    color: hsl(var(--bone));
     overflow-x: hidden;
 }
 
@@ -1363,6 +1360,19 @@ form button:hover {
 
 .series-portfolio .billboard-shade {
   background: linear-gradient(90deg, hsl(var(--ink) / 0.96) 0%, hsl(var(--ink) / 0.88) 34%, hsl(var(--ink) / 0.38) 69%, hsl(var(--ink) / 0.12) 100%), linear-gradient(0deg, hsl(var(--ink) / 0.92) 0%, transparent 44%);
+}
+
+.series-portfolio form input,
+.series-portfolio form textarea {
+  margin: 0;
+  border-radius: 0.125rem;
+  font-size: 1rem;
+  backdrop-filter: none;
+}
+
+.series-portfolio form button {
+  margin-top: 0;
+  border-radius: 0.125rem;
 }
 
 @media (max-width: 767px) {

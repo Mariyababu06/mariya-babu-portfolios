@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowDown, ArrowRight, Download, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
+import profileImage from '../assets/profile.png.asset.json';
 import {
   certifications,
   experience,
@@ -13,7 +14,7 @@ import ContactSection from './ContactSection';
 import Footer from './Footer';
 
 const navItems = [
-  { href: '#story', label: 'The Story' },
+  { href: '#story', label: 'About' },
   { href: '#journey', label: 'Journey' },
   { href: '#originals', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
@@ -72,7 +73,7 @@ const SeriesPortfolio = () => {
       <main>
         <section id="home" className="billboard relative isolate flex min-h-[700px] items-end overflow-hidden md:min-h-[760px]">
           <img
-            src="/mariya-babu-profile.png"
+            src={profileImage.url}
             alt="Portrait of Mariya Babu"
             fetchPriority="high"
             className="billboard-photo absolute inset-y-0 right-0 h-full w-full object-cover object-[center_18%] md:w-[67%] md:object-[center_16%]"
@@ -93,10 +94,10 @@ const SeriesPortfolio = () => {
                 {profile.summary} B.Tech Information Technology graduate, ready to bring analysis and curiosity to a new team.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="rounded-sm bg-crimson px-6 text-white hover:bg-crimson-2">
+                <Button asChild size="lg" className="rounded-sm bg-crimson px-6 text-primary-foreground hover:bg-crimson-2">
                   <a href="#originals">Explore my work <ArrowRight aria-hidden="true" /></a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-sm border-white/30 bg-ink/30 px-6 text-bone hover:bg-white/10 hover:text-bone">
+                <Button asChild size="lg" variant="outline" className="rounded-sm border-line/30 bg-ink/30 px-6 text-bone hover:bg-ink-3 hover:text-bone">
                   <a href="#contact">Get in touch</a>
                 </Button>
               </div>
@@ -107,7 +108,7 @@ const SeriesPortfolio = () => {
           </div>
         </section>
 
-        <section aria-label="Portfolio highlights" className="border-y border-white/10 bg-ink-2">
+        <section aria-label="Portfolio highlights" className="border-y border-line/10 bg-ink-2">
           <div className="gutter mx-auto grid max-w-screen-2xl grid-cols-2 divide-x divide-line/10 py-6 md:grid-cols-4">
             {[
               ['824K+', 'Transactions analyzed'],
@@ -145,7 +146,7 @@ const SeriesPortfolio = () => {
           </div>
         </section>
 
-        <section id="journey" className="scroll-mt-20 border-y border-white/10 bg-ink-2 py-24 md:py-28">
+        <section id="journey" className="scroll-mt-20 border-y border-line/10 bg-ink-2 py-24 md:py-28">
           <div className="gutter mx-auto max-w-screen-2xl">
             <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
               <div>
@@ -212,7 +213,7 @@ const SeriesPortfolio = () => {
                     <h3 className="mt-3 text-2xl font-semibold leading-tight text-bone">{project.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-mist">{project.description}</p>
                   </div>
-                  <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-white/10 pt-4">
+                  <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-line/10 pt-4">
                     {project.tools.map((tool) => <span key={tool} className="text-xs text-smoke">{tool}</span>)}
                     <span className="ml-auto inline-flex items-center gap-1 text-xs text-smoke">Selected project</span>
                   </div>
@@ -222,7 +223,7 @@ const SeriesPortfolio = () => {
           </div>
         </section>
 
-        <section id="skills" className="scroll-mt-20 border-y border-white/10 bg-ink-2 py-24 md:py-28">
+        <section id="skills" className="scroll-mt-20 border-y border-line/10 bg-ink-2 py-24 md:py-28">
           <div className="gutter mx-auto max-w-screen-2xl">
             <p className="eyebrow">04 / Skill genres</p>
             <div className="mb-12 mt-4 flex flex-wrap items-end justify-between gap-5">
