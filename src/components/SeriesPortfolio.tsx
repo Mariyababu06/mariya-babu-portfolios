@@ -38,9 +38,8 @@ const SeriesPortfolio = () => {
       const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0);
       const sections = Array.from(document.querySelectorAll<HTMLElement>('main section[id]'));
-      const currentSection = sections
-        .filter((section) => section.getBoundingClientRect().top <= 180)
-        .at(-1);
+      const passedSections = sections.filter((section) => section.getBoundingClientRect().top <= 180);
+      const currentSection = passedSections[passedSections.length - 1];
       setActiveSection(currentSection ? `#${currentSection.id}` : '#home');
     };
 
