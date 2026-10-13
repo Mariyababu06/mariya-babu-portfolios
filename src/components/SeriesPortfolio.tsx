@@ -37,29 +37,19 @@ const SeriesPortfolio = () => {
     const updateProgress = () => {
       const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0);
+      const sections = Array.from(document.querySelectorAll<HTMLElement>('main section[id]'));
+      const currentSection = sections
+        .filter((section) => section.getBoundingClientRect().top <= 180)
+        .at(-1);
+      setActiveSection(currentSection ? `#${currentSection.id}` : '#home');
     };
 
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
     window.addEventListener('resize', updateProgress);
-
-    const sections = document.querySelectorAll<HTMLElement>('main section[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        const currentSection = visibleSections[0]?.target.id;
-        if (currentSection) setActiveSection(`#${currentSection}`);
-      },
-      { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.25, 0.5, 0.75] },
-    );
-
-    sections.forEach((section) => observer.observe(section));
     return () => {
       window.removeEventListener('scroll', updateProgress);
       window.removeEventListener('resize', updateProgress);
-      observer.disconnect();
     };
   }, []);
 
@@ -89,6 +79,7 @@ const SeriesPortfolio = () => {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={() => setActiveSection(item.href)}
                 aria-current={activeSection === item.href ? 'location' : undefined}
                 className={`text-sm transition-colors hover:text-bone ${activeSection === item.href ? 'text-crimson-2' : 'text-mist'}`}
               >
@@ -116,7 +107,7 @@ const SeriesPortfolio = () => {
           <div className="gutter border-t border-line/10 py-3 md:hidden">
             <div className="mx-auto flex max-w-screen-2xl flex-col">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-line/5 py-3 text-sm text-mist hover:text-bone">
+                <a key={item.href} href={item.href} onClick={() => { setActiveSection(item.href); setMenuOpen(false); }} className="border-b border-line/5 py-3 text-sm text-mist hover:text-bone">
                   {item.label}
                 </a>
               ))}
