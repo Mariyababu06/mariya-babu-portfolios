@@ -277,7 +277,7 @@ const SeriesPortfolio = () => {
                 {String(visibleProjects.length).padStart(2, '0')} {visibleProjects.length === 1 ? 'project' : 'projects'}
               </p>
             </div>
-            <div className="grid gap-px border border-line/10 bg-line/10 md:grid-cols-3">
+            <div className={`grid gap-px border border-line/10 bg-line/10 ${visibleProjects.length === 1 ? 'md:grid-cols-1' : 'md:grid-cols-3'}`}>
               {visibleProjects.map((project) => (
                 <article key={project.episode} className="flex min-h-[360px] flex-col bg-ink p-6 transition-colors hover:bg-ink-3 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
