@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowDown, ArrowRight, Download, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
@@ -20,11 +20,54 @@ const navItems = [
   { href: '#contact', label: 'Contact' },
 ];
 
+const projectFilters = [
+  { label: 'All work', genre: 'all' },
+  { label: 'Customer analytics', genre: 'CUSTOMER ANALYTICS' },
+  { label: 'BI & reporting', genre: 'BUSINESS INTELLIGENCE' },
+  { label: 'Predictive analytics', genre: 'PREDICTIVE ANALYTICS' },
+] as const;
+
 const SeriesPortfolio = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
+  const [activeFilter, setActiveFilter] = useState<(typeof projectFilters)[number]['genre']>('all');
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0);
+      const sections = Array.from(document.querySelectorAll<HTMLElement>('main section[id]'));
+      const passedSections = sections.filter((section) => section.getBoundingClientRect().top <= 180);
+      const currentSection = passedSections[passedSections.length - 1];
+      setActiveSection(currentSection ? `#${currentSection.id}` : '#home');
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    return () => {
+      window.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+    };
+  }, []);
+
+  const visibleProjects = activeFilter === 'all'
+    ? projects
+    : projects.filter((project) => project.genre === activeFilter);
 
   return (
     <div className="series-portfolio min-h-screen overflow-hidden bg-ink text-bone">
+      <div
+        role="progressbar"
+        aria-label="Page reading progress"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(scrollProgress * 100)}
+        className="fixed inset-x-0 top-0 z-50 h-0.5 bg-transparent"
+      >
+        <div className="h-full origin-left bg-crimson transition-transform duration-150" style={{ transform: `scaleX(${scrollProgress})` }} />
+      </div>
       <header className="sticky top-0 z-40 border-b border-line/10 bg-ink/90 backdrop-blur-lg">
         <nav aria-label="Main navigation" className="gutter mx-auto flex min-h-16 max-w-screen-2xl items-center justify-between gap-6">
           <a href="#home" className="shrink-0 font-display text-xl uppercase tracking-wide text-bone" onClick={() => setMenuOpen(false)}>
@@ -32,7 +75,13 @@ const SeriesPortfolio = () => {
           </a>
           <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm text-mist transition-colors hover:text-bone">
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setActiveSection(item.href)}
+                aria-current={activeSection === item.href ? 'location' : undefined}
+                className={`text-sm transition-colors hover:text-bone ${activeSection === item.href ? 'text-crimson-2' : 'text-mist'}`}
+              >
                 {item.label}
               </a>
             ))}
@@ -57,7 +106,7 @@ const SeriesPortfolio = () => {
           <div className="gutter border-t border-line/10 py-3 md:hidden">
             <div className="mx-auto flex max-w-screen-2xl flex-col">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-line/5 py-3 text-sm text-mist hover:text-bone">
+                <a key={item.href} href={item.href} onClick={() => { setActiveSection(item.href); setMenuOpen(false); }} className="border-b border-line/5 py-3 text-sm text-mist hover:text-bone">
                   {item.label}
                 </a>
               ))}
@@ -198,8 +247,28 @@ const SeriesPortfolio = () => {
                 More on GitHub <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </a>
             </div>
-            <div className="grid gap-px border border-line/10 bg-line/10 md:grid-cols-3">
-              {projects.map((project) => (
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap gap-2" aria-label="Filter projects">
+                {projectFilters.map((filter) => (
+                  <Button
+                    key={filter.genre}
+                    type="button"
+                    size="sm"
+                    variant={activeFilter === filter.genre ? 'default' : 'outline'}
+                    aria-pressed={activeFilter === filter.genre}
+                    onClick={() => setActiveFilter(filter.genre)}
+                    className={`rounded-sm px-3 text-xs ${activeFilter === filter.genre ? 'bg-crimson text-primary-foreground hover:bg-crimson-2' : 'border-line/20 bg-transparent text-mist hover:bg-ink-3 hover:text-bone'}`}
+                  >
+                    {filter.label}
+                  </Button>
+                ))}
+              </div>
+              <p className="text-xs uppercase text-smoke" aria-live="polite">
+                {String(visibleProjects.length).padStart(2, '0')} {visibleProjects.length === 1 ? 'project' : 'projects'}
+              </p>
+            </div>
+            <div className={`grid gap-px border border-line/10 bg-line/10 ${visibleProjects.length === 1 ? 'md:grid-cols-1' : 'md:grid-cols-3'}`}>
+              {visibleProjects.map((project) => (
                 <article key={project.episode} className="flex min-h-[360px] flex-col bg-ink p-6 transition-colors hover:bg-ink-3 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <span className="font-display text-5xl text-crimson/80">{project.episode}</span>

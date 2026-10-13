@@ -1386,6 +1386,25 @@ form button:hover {
   background: linear-gradient(90deg, hsl(var(--ink) / 0.96) 0%, hsl(var(--ink) / 0.88) 34%, hsl(var(--ink) / 0.38) 69%, hsl(var(--ink) / 0.12) 100%), linear-gradient(0deg, hsl(var(--ink) / 0.92) 0%, transparent 44%);
 }
 
+.series-portfolio #originals article {
+  animation: project-arrive 260ms ease-out both;
+}
+
+.series-portfolio #originals article:hover {
+  background-color: hsl(var(--ink-3));
+}
+
+@keyframes project-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .series-portfolio form input,
 .series-portfolio form textarea {
   margin: 0;

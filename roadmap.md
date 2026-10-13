@@ -8,3 +8,4 @@
 - [x] Keep the contact form connected to the latest provided Google Sheets URL
 - [ ] Verify a test inquiry after the sheet endpoint permits access (last test returned HTTP 403)
 - [x] Verify the complete page layout, portrait, navigation, mobile view, and contact form surface
+- [x] Add interactive project filters, active-section navigation, and page reading progress
