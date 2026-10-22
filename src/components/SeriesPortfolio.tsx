@@ -136,17 +136,29 @@ const SeriesPortfolio = () => {
           <div aria-hidden="true" className="billboard-shade absolute inset-0" />
           <div className="gutter relative z-10 mx-auto w-full max-w-screen-2xl pb-12 pt-80 md:pb-20 md:pt-36">
             <div className="max-w-2xl">
-              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-crimson-2">
-                <span className="h-2 w-2 rounded-full bg-crimson" /> Available immediately · Data & BI roles
+              <div className="hero-enter float-soft mb-6 inline-block" style={{ '--enter-delay': '0s' } as React.CSSProperties}>
+                <span className="avatar-ring block h-24 w-24 sm:h-28 sm:w-28">
+                  <img
+                    src="/mariya-babu-profile.png"
+                    alt="Portrait avatar of Mariya Babu"
+                    width={112}
+                    height={112}
+                    loading="lazy"
+                    className="h-full w-full"
+                  />
+                </span>
+              </div>
+              <p className="hero-enter mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-crimson-2" style={{ '--enter-delay': '120ms' } as React.CSSProperties}>
+                <span className="dot-pulse h-2 w-2 rounded-full bg-crimson" /> Available immediately · Data & BI roles
               </p>
-              <h1 className="font-display text-6xl uppercase leading-[0.92] text-bone sm:text-7xl md:text-8xl">
-                Mariya<br />Babu<span className="text-crimson">.</span>
+              <h1 className="hero-enter font-display text-6xl uppercase leading-[0.92] sm:text-7xl md:text-8xl" style={{ '--enter-delay': '220ms' } as React.CSSProperties}>
+                <span className="name-gradient">Mariya<br />Babu</span><span className="text-crimson">.</span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg font-medium text-bone sm:text-xl">
+              <p className="hero-enter mt-6 max-w-xl text-lg font-medium text-bone sm:text-xl" style={{ '--enter-delay': '320ms' } as React.CSSProperties}>
                 Data Analyst <span className="text-crimson-2">/</span> Business Intelligence Analyst
               </p>
-              <p className="mt-4 max-w-lg text-base leading-7 text-mist">{profile.summary}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <p className="hero-enter mt-4 max-w-lg text-base leading-7 text-mist" style={{ '--enter-delay': '400ms' } as React.CSSProperties}>{profile.summary}</p>
+              <div className="hero-enter mt-8 flex flex-wrap gap-3" style={{ '--enter-delay': '480ms' } as React.CSSProperties}>
                 <Button asChild size="lg" className="rounded-sm bg-crimson px-6 text-primary-foreground hover:bg-crimson-2">
                   <a href="#originals">Explore my work <ArrowRight aria-hidden="true" /></a>
                 </Button>
@@ -154,28 +166,36 @@ const SeriesPortfolio = () => {
                   <a href="#contact">Get in touch</a>
                 </Button>
               </div>
-              <p className="mt-7 flex items-center gap-2 text-xs uppercase tracking-wider text-smoke">
+              <p className="hero-enter mt-7 flex items-center gap-2 text-xs uppercase tracking-wider text-smoke" style={{ '--enter-delay': '560ms' } as React.CSSProperties}>
                 <ArrowDown aria-hidden="true" className="h-4 w-4" /> Guntur, Andhra Pradesh · B.Tech IT · 2022–2026
               </p>
             </div>
           </div>
         </section>
 
-        <section aria-label="Portfolio highlights" className="border-y border-line/10 bg-ink-2">
+        <Reveal as="section" aria-label="Portfolio highlights" className="border-y border-line/10 bg-ink-2">
           <div className="gutter mx-auto grid max-w-screen-2xl grid-cols-2 divide-x divide-line/10 py-6 md:grid-cols-4">
-            {[
-              ['824K+', 'Transactions analyzed'],
-              ['5,878', 'Customers segmented'],
-              ['3', 'Internship experiences'],
-              ['0.88', 'Student model R²'],
-            ].map(([metric, caption]) => (
-              <div key={caption} className="min-w-0 px-4 py-3 first:pl-0 md:px-7">
-                <p className="font-display text-3xl text-bone">{metric}</p>
-                <p className="mt-1 text-xs text-smoke sm:text-sm">{caption}</p>
+            {(
+              [
+                { value: 824, suffix: 'K+', decimals: 0, caption: 'Transactions analyzed' },
+                { value: 5878, suffix: '', decimals: 0, caption: 'Customers segmented' },
+                { value: 3, suffix: '', decimals: 0, caption: 'Internship experiences' },
+                { value: 0.88, suffix: '', decimals: 2, caption: 'Student model R²' },
+              ] as const
+            ).map((metric, index) => (
+              <div key={metric.caption} className="min-w-0 px-4 py-3 first:pl-0 md:px-7">
+                <CountUp
+                  value={metric.value}
+                  decimals={metric.decimals}
+                  suffix={metric.suffix}
+                  delay={index * 120}
+                  className="metric-pop font-display text-3xl text-bone"
+                />
+                <p className="mt-1 text-xs text-smoke sm:text-sm">{metric.caption}</p>
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         <section id="story" className="gutter scroll-mt-20 py-24 md:py-32">
           <div className="mx-auto grid max-w-screen-2xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
