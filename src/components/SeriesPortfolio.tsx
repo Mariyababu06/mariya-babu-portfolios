@@ -245,21 +245,22 @@ const SeriesPortfolio = () => {
                 </article>
               ))}
             </div>
+            </Reveal>
             <div className="mt-12 grid gap-10 md:grid-cols-[1fr_1fr]">
-              <div>
+              <Reveal>
                 <p className="eyebrow">The origin story</p>
                 <h3 className="mt-3 text-xl font-semibold">B.Tech in Information Technology</h3>
                 <p className="mt-2 text-sm text-mist">KKR & KSR Institute of Technology & Sciences · 2022–2026</p>
                 <p className="mt-2 text-sm text-smoke">CGPA 7.21</p>
-              </div>
-              <div>
+              </Reveal>
+              <Reveal delay={120}>
                 <p className="eyebrow">Featured credentials</p>
                 <ul className="mt-3 grid gap-2 sm:grid-cols-2">
                   {certifications.map((cert) => (
                     <li key={cert} className="border-l-2 border-crimson/70 py-1 pl-3 text-sm leading-6 text-mist">{cert}</li>
                   ))}
                 </ul>
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
