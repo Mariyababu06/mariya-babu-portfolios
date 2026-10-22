@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { ArrowDown, ArrowRight, Download, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import CountUp from './CountUp';
+import Reveal from './Reveal';
 import cvAsset from '../assets/mariya-babu-cv.pdf.asset.json';
 import {
   certifications,
@@ -70,8 +72,13 @@ const SeriesPortfolio = () => {
       </div>
       <header className="sticky top-0 z-40 border-b border-line/10 bg-ink/90 backdrop-blur-lg">
         <nav aria-label="Main navigation" className="gutter mx-auto flex min-h-16 max-w-screen-2xl items-center justify-between gap-6">
-          <a href="#home" className="shrink-0 font-display text-xl uppercase tracking-wide text-bone" onClick={() => setMenuOpen(false)}>
-            Mariya Babu<span className="ml-2 text-crimson">/</span>
+          <a href="#home" className="flex shrink-0 items-center gap-3" onClick={() => setMenuOpen(false)}>
+            <span className="avatar-ring inline-block h-9 w-9">
+              <img src="/mariya-babu-profile.png" alt="" aria-hidden="true" className="h-full w-full" width={36} height={36} loading="lazy" />
+            </span>
+            <span className="font-display text-xl uppercase tracking-wide text-bone">
+              Mariya Babu<span className="ml-2 text-crimson">/</span>
+            </span>
           </a>
           <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
