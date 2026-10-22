@@ -199,11 +199,11 @@ const SeriesPortfolio = () => {
 
         <section id="story" className="gutter scroll-mt-20 py-24 md:py-32">
           <div className="mx-auto grid max-w-screen-2xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
-            <div>
+            <Reveal>
               <p className="eyebrow">01 / The pilot</p>
               <h2 className="section-heading mt-4">A clear story,<br />told by data.</h2>
-            </div>
-            <div className="max-w-3xl self-end">
+            </Reveal>
+            <Reveal delay={120} className="max-w-3xl self-end">
               <p className="text-xl leading-9 text-bone sm:text-2xl sm:leading-10">
                 I’m an Information Technology graduate who enjoys making business data easier to understand and act on.
               </p>
