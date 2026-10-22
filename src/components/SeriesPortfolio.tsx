@@ -267,7 +267,7 @@ const SeriesPortfolio = () => {
 
         <section id="originals" className="gutter scroll-mt-20 py-24 md:py-32">
           <div className="mx-auto max-w-screen-2xl">
-            <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+            <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6">
               <div>
                 <p className="eyebrow">03 / Selected work</p>
                 <h2 className="section-heading mt-4">The data originals.</h2>
@@ -275,7 +275,7 @@ const SeriesPortfolio = () => {
               <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-bone transition-colors hover:text-crimson-2">
                 More on GitHub <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </a>
-            </div>
+            </Reveal>
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-2" aria-label="Filter projects">
                 {projectFilters.map((filter) => (
@@ -297,22 +297,24 @@ const SeriesPortfolio = () => {
               </p>
             </div>
             <div className={`grid gap-px border border-line/10 bg-line/10 ${visibleProjects.length === 1 ? 'md:grid-cols-1' : 'md:grid-cols-3'}`}>
-              {visibleProjects.map((project) => (
-                <article key={project.episode} className="flex min-h-[360px] flex-col bg-ink p-6 transition-colors hover:bg-ink-3 sm:p-8">
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="font-display text-5xl text-crimson/80">{project.episode}</span>
-                    <span className="text-right text-[10px] font-semibold uppercase tracking-[0.16em] text-smoke">{project.genre}</span>
-                  </div>
-                  <div className="mt-10 flex-1">
-                    <p className="text-xs font-medium uppercase tracking-wide text-crimson-2">{project.signal}</p>
-                    <h3 className="mt-3 text-2xl font-semibold leading-tight text-bone">{project.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-mist">{project.description}</p>
-                  </div>
-                  <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-line/10 pt-4">
-                    {project.tools.map((tool) => <span key={tool} className="text-xs text-smoke">{tool}</span>)}
-                    <span className="ml-auto inline-flex items-center gap-1 text-xs text-smoke">Selected project</span>
-                  </div>
-                </article>
+              {visibleProjects.map((project, index) => (
+                <Reveal key={project.episode} delay={index * 90}>
+                  <article className="lift sweep-host flex h-full min-h-[360px] flex-col bg-ink p-6 transition-colors hover:bg-ink-3 sm:p-8">
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="font-display text-5xl text-crimson/80">{project.episode}</span>
+                      <span className="text-right text-[10px] font-semibold uppercase tracking-[0.16em] text-smoke">{project.genre}</span>
+                    </div>
+                    <div className="mt-10 flex-1">
+                      <p className="text-xs font-medium uppercase tracking-wide text-crimson-2">{project.signal}</p>
+                      <h3 className="mt-3 text-2xl font-semibold leading-tight text-bone">{project.title}</h3>
+                      <p className="mt-4 text-sm leading-7 text-mist">{project.description}</p>
+                    </div>
+                    <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-line/10 pt-4">
+                      {project.tools.map((tool) => <span key={tool} className="text-xs text-smoke">{tool}</span>)}
+                      <span className="ml-auto inline-flex items-center gap-1 text-xs text-smoke">Selected project</span>
+                    </div>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -320,28 +322,32 @@ const SeriesPortfolio = () => {
 
         <section id="skills" className="scroll-mt-20 border-y border-line/10 bg-ink-2 py-24 md:py-28">
           <div className="gutter mx-auto max-w-screen-2xl">
-            <p className="eyebrow">04 / Skill genres</p>
-            <div className="mb-12 mt-4 flex flex-wrap items-end justify-between gap-5">
-              <h2 className="section-heading">Tools of the trade.</h2>
-              <p className="max-w-md text-sm leading-6 text-mist">A practical toolkit for finding the signal, explaining it, and making it useful.</p>
-            </div>
+            <Reveal>
+              <p className="eyebrow">04 / Skill genres</p>
+              <div className="mb-12 mt-4 flex flex-wrap items-end justify-between gap-5">
+                <h2 className="section-heading">Tools of the trade.</h2>
+                <p className="max-w-md text-sm leading-6 text-mist">A practical toolkit for finding the signal, explaining it, and making it useful.</p>
+              </div>
+            </Reveal>
             <div className="grid gap-10 md:grid-cols-3 md:gap-8">
               {skillGenres.map((genre, index) => (
-                <article key={genre.name} className="border-t-2 border-crimson/70 pt-5">
-                  <p className="font-display text-2xl text-smoke">VOL. 0{index + 1}</p>
-                  <h3 className="mt-3 text-xl font-semibold text-bone">{genre.name}</h3>
-                  <p className="mt-2 text-sm text-mist">{genre.detail}</p>
-                  <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-3">
-                    {genre.skills.map((skill) => <li key={skill} className="text-sm text-bone">{skill}</li>)}
-                  </ul>
-                </article>
+                <Reveal key={genre.name} delay={index * 110}>
+                  <article className="lift h-full border-t-2 border-crimson/70 pt-5">
+                    <p className="font-display text-2xl text-smoke">VOL. 0{index + 1}</p>
+                    <h3 className="mt-3 text-xl font-semibold text-bone">{genre.name}</h3>
+                    <p className="mt-2 text-sm text-mist">{genre.detail}</p>
+                    <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-3">
+                      {genre.skills.map((skill) => <li key={skill} className="text-sm text-bone">{skill}</li>)}
+                    </ul>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         <section className="gutter py-16">
-          <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-6 border-b border-line/10 pb-12 sm:flex-row sm:items-center">
+          <Reveal className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-6 border-b border-line/10 pb-12 sm:flex-row sm:items-center">
             <div>
               <p className="eyebrow">The complete story</p>
               <h2 className="mt-3 font-display text-4xl uppercase text-bone">Mariya’s CV</h2>
