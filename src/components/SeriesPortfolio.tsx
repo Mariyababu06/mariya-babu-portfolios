@@ -221,13 +221,14 @@ const SeriesPortfolio = () => {
 
         <section id="journey" className="scroll-mt-20 border-y border-line/10 bg-ink-2 py-24 md:py-28">
           <div className="gutter mx-auto max-w-screen-2xl">
-            <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+            <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6">
               <div>
                 <p className="eyebrow">02 / My journey</p>
                 <h2 className="section-heading mt-4">Experience, in episodes.</h2>
               </div>
               <span className="text-sm text-smoke">Three chapters in data & machine learning</span>
-            </div>
+            </Reveal>
+            <Reveal>
             <div className="divide-y divide-line/10 border-y border-line/10">
               {experience.map((entry, index) => (
                 <article key={entry.episode} className="grid gap-4 py-7 sm:grid-cols-[64px_1fr_auto] sm:items-start sm:gap-7">
