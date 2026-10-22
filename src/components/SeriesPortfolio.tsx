@@ -215,7 +215,7 @@ const SeriesPortfolio = () => {
                 <span>{profile.location}</span>
                 <span className="text-crimson-2">{profile.availability}</span>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
